@@ -2,24 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Phone, MapPin, Clock, Facebook, Instagram, ChevronRight, Sparkles, Gem, Crown, Heart, MessageCircle, Diamond,  Star as StarIcon, ShoppingBag, Shield, Award, TrendingUp } from 'lucide-react';
 import { ThemeProvider } from './contexts/ThemeContext';
-import SimpleThemeSwitcher from './components/SimpleThemeSwitcher';
+// import SimpleThemeSwitcher from './components/SimpleThemeSwitcher';
 import './App.css';
 
 function AppContent() {
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50">
-      <SimpleThemeSwitcher />
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
+      {/* <SimpleThemeSwitcher /> */}
       {/* Enhanced Navigation */}
-      <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-lg shadow-lg z-50 py-4 border-b border-amber-100">
+      <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-lg shadow-lg z-50 py-4 border-b border-yellow-600/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
           <motion.div 
-            className="flex items-center gap-3 text-2xl font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent relative z-10"
+            className="flex items-center gap-3 text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent relative z-10"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center">
               <Crown className="w-6 h-6 text-white" />
             </div>
             <span className="font-display">Chauhan Jewellers</span>
@@ -30,11 +30,11 @@ function AppContent() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <a href="tel:+918305300009" className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            <a href="tel:+918305300009" className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
               <Phone size={18} />
               +91 83053 00009
             </a>
-            <button className="flex items-center gap-2 bg-white text-amber-600 px-6 py-3 rounded-full font-semibold border-2 border-amber-200 transition-all duration-300 hover:bg-amber-50 hover:border-amber-300">
+            <button className="flex items-center gap-2 bg-gray-800 text-yellow-400 px-6 py-3 rounded-full font-semibold border-2 border-yellow-600/50 transition-all duration-300 hover:bg-gray-700 hover:border-yellow-500">
               <ShoppingBag size={18} />
               Shop Now
             </button>
@@ -44,28 +44,28 @@ function AppContent() {
 
       {/* Enhanced Hero Section */}
       <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-100/30 via-transparent to-orange-100/30 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/20 via-transparent to-yellow-800/20 z-0"></div>
         
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-5">
           <motion.div
             animate={{ y: [-20, 20, -20], rotate: [0, 180, 360] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-10 text-amber-400/20"
+            className="absolute top-20 left-10 text-yellow-600/20"
           >
             <Gem size={60} />
           </motion.div>
           <motion.div
             animate={{ y: [20, -20, 20], rotate: [0, -180, -360] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-20 right-10 text-orange-400/20"
+            className="absolute bottom-20 right-10 text-yellow-500/20"
           >
             <Diamond size={80} />
           </motion.div>
           <motion.div
             animate={{ y: [-15, 15, -15], scale: [1, 1.1, 1] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/3 left-1/4 text-amber-300/20"
+            className="absolute top-1/3 left-1/4 text-yellow-400/20"
           >
             <Crown size={70} />
           </motion.div>
@@ -89,17 +89,17 @@ function AppContent() {
             </motion.div>
              */}
             <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-8 font-display"
+              className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8 font-display"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               Exquisite Jewelry That
-              <span className="block bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 bg-clip-text text-transparent bg-[length:200%_200%] animate-gradient-shift">Tells Your Story</span>
+              <span className="block bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent bg-[length:200%_200%] animate-gradient-shift">Tells Your Story</span>
             </motion.h1>
             
             <motion.p 
-              className="text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -115,7 +115,7 @@ function AppContent() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <motion.button 
-                className="flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-10 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                className="flex items-center justify-center gap-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-10 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -123,7 +123,7 @@ function AppContent() {
                 <ChevronRight size={24} />
               </motion.button>
               <motion.button 
-                className="bg-white text-amber-600 px-10 py-5 rounded-full text-xl font-bold border-2 border-amber-300 transition-all duration-300 hover:bg-amber-50 hover:border-amber-400 shadow-lg"
+                className="bg-gray-800 text-yellow-400 px-10 py-5 rounded-full text-xl font-bold border-2 border-yellow-600/50 transition-all duration-300 hover:bg-gray-700 hover:border-yellow-500 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -139,10 +139,10 @@ function AppContent() {
             >
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-amber-500 fill-current" size={24} />
+                  <Star key={i} className="w-6 h-6 text-yellow-500 fill-current" size={24} />
                 ))}
               </div>
-              <span className="text-gray-700 font-bold text-lg">5.0 (282 reviews)</span>
+              <span className="text-gray-200 font-bold text-lg">5.0 (282 reviews)</span>
             </motion.div>
           </motion.div>
           
@@ -153,14 +153,14 @@ function AppContent() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative w-full h-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-200/20 to-orange-200/20 rounded-3xl backdrop-blur-sm"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/20 to-yellow-800/20 rounded-3xl backdrop-blur-sm"></div>
               <div className="relative w-full h-full flex items-center justify-center">
                 <motion.div
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="text-center"
                 >
-                  <div className="w-48 h-48 lg:w-64 lg:h-64 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full flex items-center justify-center shadow-2xl">
+                  <div className="w-48 h-48 lg:w-64 lg:h-64 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl">
                     <Crown className="w-24 h-24 lg:w-32 lg:h-32 text-white" />
                   </div>
                 </motion.div>
@@ -171,7 +171,7 @@ function AppContent() {
       </section>
 
       {/* Enhanced Features Section */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-24 lg:py-32 bg-gray-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div 
             className="text-center mb-20"
@@ -180,8 +180,8 @@ function AppContent() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-display bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Why Choose Chauhan Jewellers?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Experience the perfect blend of tradition and innovation with our exceptional jewelry collections</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Why Choose Chauhan Jewellers?</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">Experience the perfect blend of tradition and innovation with our exceptional jewelry collections</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -207,21 +207,21 @@ function AppContent() {
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-amber-50 to-orange-50 p-10 lg:p-12 rounded-3xl text-center shadow-xl border border-amber-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-amber-200"
+                className="bg-gradient-to-br from-gray-700 to-gray-800 p-10 lg:p-12 rounded-3xl text-center shadow-xl border border-yellow-600/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-yellow-500/50"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full mb-8 text-white shadow-lg">
+                <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full mb-8 text-white shadow-lg">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{feature.description}</p>
+                <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">{feature.description}</p>
                 <div className="flex flex-wrap gap-2 justify-center">
                   {feature.features.map((feat, i) => (
-                    <span key={i} className="bg-white text-amber-600 px-3 py-1 rounded-full text-sm font-semibold border border-amber-200">
+                    <span key={i} className="bg-gray-700 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold border border-yellow-600/50">
                       {feat}
                     </span>
                   ))}
@@ -233,7 +233,7 @@ function AppContent() {
       </section>
 
       {/* Enhanced Collections Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-amber-50 via-white to-orange-50">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div 
             className="text-center mb-20"
@@ -242,8 +242,8 @@ function AppContent() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-display bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Our Exclusive Collections</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Discover our handcrafted jewelry pieces that blend tradition with contemporary elegance</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Our Exclusive Collections</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">Discover our handcrafted jewelry pieces that blend tradition with contemporary elegance</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -253,22 +253,22 @@ function AppContent() {
                 title: "Gold Jewelry",
                 description: "Timeless 22K Gold Masterpieces that embody luxury and tradition. Each piece tells a story of elegance.",
                 items: ["Mangalsutras", "Jhumkas", "Kadas", "Chains", "Rings", "Bangles"],
-                bgGradient: "from-yellow-300 via-amber-200 to-yellow-400",
-                borderColor: "border-yellow-400",
+                bgGradient: "from-yellow-600 via-yellow-500 to-yellow-700",
+                borderColor: "border-yellow-500",
                 animation: "animate-float-gold",
                 featured: true,
-                shimmer: "from-yellow-200/50 via-amber-100/60 to-yellow-300/50"
+                shimmer: "from-yellow-500/50 via-yellow-400/60 to-yellow-600/50"
               },
               {
                 icon: <Diamond size={48} />,
                 title: "Diamond Jewelry",
                 description: "Exquisite diamond pieces that sparkle with brilliance and elegance for every special occasion.",
                 items: ["Diamond Rings", "Earrings", "Pendants", "Bracelets"],
-                bgGradient: "from-blue-300 via-cyan-200 to-blue-400",
-                borderColor: "border-blue-400",
+                bgGradient: "from-gray-300 via-gray-200 to-gray-400",
+                borderColor: "border-gray-400",
                 animation: "animate-float-diamond",
                 featured: true,
-                shimmer: "from-blue-200/50 via-cyan-100/60 to-blue-300/50",
+                shimmer: "from-gray-300/50 via-gray-200/60 to-gray-400/50",
                 sparkle: true
               },
               {
@@ -276,11 +276,11 @@ function AppContent() {
                 title: "Kundan Jewelry",
                 description: "Traditional Kundan work that reflects our rich cultural heritage and master craftsmanship.",
                 items: ["Kundan Sets", "Jhumkas", "Tikkas", "Mathapatti"],
-                bgGradient: "from-amber-400 via-orange-300 to-amber-500",
-                borderColor: "border-amber-400",
+                bgGradient: "from-yellow-700 via-yellow-600 to-yellow-800",
+                borderColor: "border-yellow-600",
                 animation: "animate-float-kundan",
                 featured: true,
-                shimmer: "from-amber-200/50 via-orange-100/60 to-amber-300/50",
+                shimmer: "from-yellow-600/50 via-yellow-500/60 to-yellow-700/50",
                 traditional: true
               },
               {
@@ -377,7 +377,7 @@ function AppContent() {
       </section>
 
       {/* Enhanced Testimonials */}
-      <section className="py-24 lg:py-32 bg-white">
+      <section className="py-24 lg:py-32 bg-gray-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div 
             className="text-center mb-20"
@@ -386,8 +386,8 @@ function AppContent() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-display bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Real experiences from our valued customers who trust us with their special moments</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">What Our Customers Say</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">Real experiences from our valued customers who trust us with their special moments</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -413,7 +413,7 @@ function AppContent() {
             ].map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-amber-50 to-orange-50 p-8 lg:p-10 rounded-3xl shadow-xl border border-amber-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                className="bg-gradient-to-br from-gray-700 to-gray-800 p-8 lg:p-10 rounded-3xl shadow-xl border border-yellow-600/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -422,13 +422,13 @@ function AppContent() {
               >
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-amber-500 fill-current" size={20} />
+                    <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" size={20} />
                   ))}
                 </div>
-                <p className="text-lg text-gray-800 leading-relaxed mb-6 italic">"{testimonial.comment}"</p>
+                <p className="text-lg text-gray-200 leading-relaxed mb-6 italic">"{testimonial.comment}"</p>
                 <div className="flex justify-between items-center">
-                  <p className="text-gray-700 font-bold">{testimonial.name}</p>
-                  <span className="text-gray-500 text-sm">{testimonial.date}</span>
+                  <p className="text-gray-200 font-bold">{testimonial.name}</p>
+                  <span className="text-gray-400 text-sm">{testimonial.date}</span>
                 </div>
               </motion.div>
             ))}
@@ -437,7 +437,7 @@ function AppContent() {
       </section>
 
       {/* Enhanced Contact Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-amber-50 via-white to-orange-50">
+      <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div 
             className="grid lg:grid-cols-2 gap-20 items-center"
@@ -447,37 +447,37 @@ function AppContent() {
             viewport={{ once: true }}
           >
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-display bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">Visit Our Store</h2>
-              <p className="text-xl text-gray-600 mb-12">Experience our collection in person at our premium Batala location</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-display bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Visit Our Store</h2>
+              <p className="text-xl text-gray-300 mb-12">Experience our collection in person at our premium Batala location</p>
               
               <div className="space-y-8 mb-12">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <MapPin size={24} className="text-white" />
                   </div>
                   <div>
-                    <strong className="block text-gray-900 mb-2 text-lg">Address</strong>
-                    <p className="text-gray-600 text-lg">City Rd, Gate, Batala, Punjab 143505</p>
+                    <strong className="block text-white mb-2 text-lg">Address</strong>
+                    <p className="text-gray-300 text-lg">City Rd, Gate, Batala, Punjab 143505</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <Phone size={24} className="text-white" />
                   </div>
                   <div>
-                    <strong className="block text-gray-900 mb-2 text-lg">Phone</strong>
-                    <p className="text-lg"><a href="tel:+918305300009" className="text-amber-600 font-bold hover:text-orange-600 transition-colors">+91 83053 00009</a></p>
+                    <strong className="block text-white mb-2 text-lg">Phone</strong>
+                    <p className="text-lg"><a href="tel:+918305300009" className="text-yellow-400 font-bold hover:text-yellow-500 transition-colors">+91 83053 00009</a></p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <Clock size={24} className="text-white" />
                   </div>
                   <div>
-                    <strong className="block text-gray-900 mb-2 text-lg">Hours</strong>
-                    <p className="text-gray-600 text-lg">Open · Closes 8:00 PM</p>
+                    <strong className="block text-white mb-2 text-lg">Hours</strong>
+                    <p className="text-gray-300 text-lg">Open · Closes 8:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -499,7 +499,7 @@ function AppContent() {
             </div>
             
             <motion.div 
-              className="bg-gradient-to-br from-amber-500 to-orange-500 p-16 rounded-3xl text-center text-white shadow-2xl"
+              className="bg-gradient-to-br from-yellow-600 to-yellow-700 p-16 rounded-3xl text-center text-white shadow-2xl"
               whileHover={{ scale: 1.02 }}
             >
               <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-8">
@@ -509,7 +509,7 @@ function AppContent() {
               <p className="text-xl mb-10 opacity-90">Visit us today and discover why we're Batala's most trusted jeweller for generations</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button 
-                  className="bg-white text-amber-600 text-lg font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:bg-gray-900 hover:text-white"
+                  className="bg-white text-yellow-600 text-lg font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:bg-gray-900 hover:text-yellow-400"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -517,7 +517,7 @@ function AppContent() {
                   <ChevronRight size={20} className="ml-2" />
                 </motion.button>
                 <motion.button 
-                  className="bg-transparent text-white text-lg font-bold px-6 py-3 rounded-full border-2 border-white flex items-center justify-center gap-2 transition-all duration-300 hover:bg-white hover:text-amber-600"
+                  className="bg-transparent text-white text-lg font-bold px-6 py-3 rounded-full border-2 border-yellow-400 flex items-center justify-center gap-2 transition-all duration-300 hover:bg-yellow-400 hover:text-gray-900"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -535,17 +535,17 @@ function AppContent() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex flex-col items-center md:items-start gap-4">
-              <div className="flex items-center gap-3 text-2xl font-bold text-amber-400">
-                <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full flex items-center justify-center">
+              <div className="flex items-center gap-3 text-2xl font-bold text-yellow-400">
+                <div className="w-8 h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center">
                   <Crown className="w-5 h-5 text-white" />
                 </div>
                 <span className="font-display">Chauhan Jewellers</span>
               </div>
               <p className="text-gray-400 text-lg">The Family Jeweller for Generations</p>
               <div className="flex gap-4 mt-2">
-                <Shield className="w-5 h-5 text-amber-400" />
-                <TrendingUp className="w-5 h-5 text-amber-400" />
-                <Award className="w-5 h-5 text-amber-400" />
+                <Shield className="w-5 h-5 text-yellow-400" />
+                <TrendingUp className="w-5 h-5 text-yellow-400" />
+                <Award className="w-5 h-5 text-yellow-400" />
               </div>
             </div>
             <div className="text-center md:text-right">
