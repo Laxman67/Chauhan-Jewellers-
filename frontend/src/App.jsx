@@ -62,10 +62,10 @@ function AppContent() {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                  <Crown className="w-7 h-7 text-white" />
+                <div className="w-12 h-12 bg-linear-to-br from-amber-400 via-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                 <a href="/"> <Crown className="w-7 h-7 text-white" /></a>
                 </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
               </div>
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent font-display">Chauhan Jewellers</h1>
@@ -110,15 +110,7 @@ function AppContent() {
                   <span className="hidden xl:inline">+91 83053 00009</span>
                   <span className="xl:hidden">Call</span>
                 </motion.a>
-                <motion.button
-                  onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="flex items-center gap-2 bg-gray-900 text-amber-400 px-5 py-2.5 rounded-full font-medium border border-amber-500/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-800 hover:border-amber-400 hover:scale-105"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <ShoppingBag size={16} />
-                  <span className="hidden xl:inline">Shop</span>
-                </motion.button>
+            
               </motion.div>
             </div>
 
@@ -173,16 +165,7 @@ function AppContent() {
                   <Phone size={18} />
                   +91 83053 00009
                 </a>
-                <button
-                  onClick={() => {
-                    document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' });
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full flex items-center justify-center gap-2 bg-gray-900 text-amber-400 px-6 py-3 rounded-full font-medium border border-amber-500/50 shadow-lg transition-all duration-300 hover:bg-gray-800 hover:border-amber-400 hover:scale-105"
-                >
-                  <ShoppingBag size={18} />
-                  Shop Now
-                </button>
+             
               </div>
               <div className="flex justify-center gap-4 pt-4 border-t border-gray-200">
                 <a
@@ -226,7 +209,7 @@ function AppContent() {
             loop
             playsInline
           >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-elegant-indian-woman-with-traditional-jewelry-39880-large.mp4" type="video/mp4" />
+            <source src="https://www.shutterstock.com/shutterstock/videos/1103687939/preview/stock-footage-bangalore-india-st-april-a-beautiful-indian-female-fashion-model-flaunting-traditional.webm" type="video/mp4" />
             {/* Fallback for browsers that don't support the video */}
             <img
               src="https://images.unsplash.com/photo-1617029192839-5a5e5c7a3f5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
@@ -236,11 +219,7 @@ function AppContent() {
           </video>
 
           {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-900/60 via-amber-800/50 to-amber-900/60"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40"></div>
-          {/* Animated Background Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-100/20 via-transparent to-beige-100/20"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_70%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20"></div>
         </div>
 
         {/* Floating Elements */}
@@ -744,14 +723,98 @@ function AppContent() {
 
 
       {/* About Section */}
-      <section className="py-24 lg:py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <section className="py-2 lg:py-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-2 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 font-display tracking-wide">About Us</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light mb-6">
+              A legacy of excellence since 1965. Located at City Road, Batala, we are proud to be the family jeweller for generations, bringing timeless craftsmanship and elegant jewellery designs to our valued customers.
+            </p>
+            
+            {/* Combined Badges */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+              {/* Legacy Badge */}
+              <div className="inline-flex items-center bg-white rounded-full shadow-lg px-6 py-3">
+                <svg className="w-5 h-5 text-amber-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd"/>
+                </svg>
+                <span className="text-amber-800 font-semibold">Established 1965</span>
+                <span className="text-gray-400 mx-2">•</span>
+                <span className="text-gray-600">3 Generations of Trust</span>
+              </div>
+              
+              {/* Google Rating Badge */}
+              <div className="inline-flex items-center bg-white rounded-full shadow-lg px-6 py-3">
+                <svg className="w-5 h-5 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span className="text-2xl font-bold text-gray-900 mr-2">5.0</span>
+                <span className="text-gray-600 mr-2">(282 reviews)</span>
+                <span className="text-sm text-gray-500">• Jewelry Store in Batala, Punjab</span>
+              </div>
+            </div>
+          </div>
 
-          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 font-display tracking-wide">About Chauhan Jewellers</h2>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-            Chauhan Jewellers is one of Batala's most trusted jewellery destinations located at City Road, Bhandari Gate.
-            With hundreds of happy customers and a 5⭐ reputation, we bring timeless craftsmanship and elegant jewellery designs.
-          </p>
+          {/* Customer Reviews Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <p className="text-gray-700 italic mb-3">"Great jewellery collection and great owners and staff 👍🏻"</p>
+              <p className="text-sm font-semibold text-gray-900">Prabh Randhawa</p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <p className="text-gray-700 italic mb-3">"Good dealing and designs, price also be very reasonable, excellent service."</p>
+              <p className="text-sm font-semibold text-gray-900">Maninder Singh</p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="flex items-center mb-4">
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                  ))}
+                </div>
+              </div>
+              <p className="text-gray-700 italic mb-3">"I had a wonderful experience browsing through your selection of jewelry."</p>
+              <p className="text-sm font-semibold text-gray-900">Jasmeet Bajwa</p>
+            </div>
+          </div>
+
+          {/* Call to Action for Reviews */}
+          <div className="text-center">
+            <a 
+              href="https://share.google/4abwn5jaP0khOixda" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            >
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Leave a Google Review
+            </a>
+            <p className="text-sm text-gray-500 mt-3">Share your experience with us</p>
+          </div>
         </div>
       </section>
 
@@ -794,7 +857,7 @@ function AppContent() {
                   </div>
                   <div>
                     <h3 className="text-gray-900 mb-2 text-sm font-semibold tracking-wide uppercase">Business Hours</h3>
-                    <p className="text-gray-700 text-base">Open Daily · Closes 8:00 PM</p>
+                    <p className="text-gray-700 text-base">Mon to Saturday :  Closes 8:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -836,6 +899,8 @@ function AppContent() {
           </div>
         </div>
       </section>
+
+     
 
       {/* Footer */}
       <footer className="bg-gray-50 text-gray-900 py-16 border-t border-gray-200">
