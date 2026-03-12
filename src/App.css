@@ -1,0 +1,90 @@
+/* Additional custom styles that complement Tailwind */
+@layer components {
+  /* Animation keyframes */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes float-gold {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+      transform: translate(10px, -10px) rotate(120deg);
+    }
+    66% {
+      transform: translate(-10px, 10px) rotate(240deg);
+    }
+  }
+  
+  @keyframes float-diamond {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    25% {
+      transform: translate(15px, -5px) rotate(90deg) scale(1.1);
+    }
+    50% {
+      transform: translate(-5px, 15px) rotate(180deg) scale(1);
+    }
+    75% {
+      transform: translate(-15px, -5px) rotate(270deg) scale(1.1);
+    }
+  }
+  
+  @keyframes float-kundan {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(8px, -8px) rotate(45deg);
+    }
+    50% {
+      transform: translate(-8px, 8px) rotate(90deg);
+    }
+    75% {
+      transform: translate(-8px, -8px) rotate(135deg);
+    }
+  }
+  
+  @keyframes float-silver {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    20% {
+      transform: translate(12px, -6px) rotate(72deg) scale(1.05);
+    }
+    40% {
+      transform: translate(-6px, 12px) rotate(144deg) scale(1);
+    }
+    60% {
+      transform: translate(-12px, -6px) rotate(216deg) scale(1.05);
+    }
+    80% {
+      transform: translate(6px, -12px) rotate(288deg) scale(1);
+    }
+  }
+  
+  /* Utility classes */
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+  
+  .animate-float-gold {
+    animation: float-gold 8s ease-in-out infinite;
+  }
+  
+  .animate-float-diamond {
+    animation: float-diamond 10s ease-in-out infinite;
+  }
+  
+  .animate-float-kundan {
+    animation: float-kundan 9s ease-in-out infinite;
+  }
+  
+  .animate-float-silver {
+    animation: float-silver 11s ease-in-out infinite;
+  }
+}
