@@ -1,47 +1,40 @@
-# 💍 Chauhan Jewellers - Premium Jewelry Website
+# 💎 Chauhan Jewellers - Premium E-commerce Website
 
-A stunning, modern jewelry e-commerce website for Chauhan Jewellers, featuring elegant design, smooth animations, and exceptional user experience.
+A luxury jewellery e-commerce website for Chauhan Jewellers in Batala, Punjab. Built with React, Node.js, and modern web technologies.
 
-## 🌟 Features
+## ✨ Features
 
-### **Design & UI**
-- 🎨 **Modern Design**: Beautiful gradient-based UI with amber/orange luxury theme
-- ✨ **Smooth Animations**: Framer Motion powered micro-interactions and floating elements
-- 📱 **Fully Responsive**: Mobile-first design that works perfectly on all devices
-- 🎯 **Interactive Elements**: Hover effects, transitions, and engaging user interactions
+### 🏪 Frontend Features
+- **Luxury UI Design** - Premium, elegant interface with smooth animations
+- **Product Catalog** - Dynamic product display with category filtering
+- **Responsive Design** - Mobile-optimized layout
+- **WhatsApp Integration** - Direct customer enquiries via WhatsApp
+- **Google Maps** - Store location integration
+- **Instagram Gallery** - Social media integration
+- **Smooth Animations** - Framer Motion powered interactions
+- **Modern UI** - Tailwind CSS styling
 
-### **Content Sections**
-- 🏠 **Hero Section**: Eye-catching landing with animated floating jewelry elements
-- ⭐ **Features**: Highlighting quality, legacy, and personalized service
-- 💎 **Collections**: Showcase of Gold, Diamond, Kundan, and Silver jewelry
-- 💬 **Customer Testimonials**: Social proof with customer reviews
-- 📍 **Contact & Location**: Store information with integrated social links
-- 💬 **WhatsApp Integration**: Direct customer support via floating WhatsApp button
+### 🛠 Backend Features
+- **RESTful API** - Complete CRUD operations for products
+- **Image Upload** - Multer-based file handling
+- **Admin Panel** - Product management interface
+- **Database** - JSON-based storage (easily upgradeable to MongoDB)
+- **Security** - Helmet, CORS, rate limiting
+- **Error Handling** - Comprehensive error management
 
-### **Technical Features**
-- ⚡ **Performance**: Optimized with Vite for lightning-fast development and builds
-- 🎭 **Animations**: Custom CSS animations and Framer Motion effects
-- 🎨 **Styling**: Tailwind CSS v4 with custom color palette and utilities
-- 🔧 **Modern Stack**: React 18, Vite, and latest web technologies
+### 📦 Product Categories
+- **Gold Jewelry** - Traditional and modern gold pieces
+- **Diamond Jewelry** - Premium diamond collections
+- **Kundan Jewelry** - Traditional Indian designs
+- **Silver Jewelry** - Contemporary silver items
 
-## 🛠️ Tech Stack
+## 🚀 Quick Start
 
-| Technology | Version | Description |
-|------------|---------|-------------|
-| **React** | ^18.2.0 | UI Framework |
-| **Vite** | ^7.3.1 | Build Tool & Dev Server |
-| **Tailwind CSS** | ^4.2.1 | CSS Framework |
-| **Framer Motion** | ^10.16.0 | Animation Library |
-| **Lucide React** | ^0.263.0 | Icon Library |
-| **React Icons** | ^4.10.0 | Additional Icons |
-
-## 🚀 Getting Started
-
-### **Prerequisites**
+### Prerequisites
 - Node.js (v16 or higher)
 - npm or yarn
 
-### **Installation**
+### Installation
 
 1. **Clone the repository**
    ```bash
@@ -49,137 +42,170 @@ A stunning, modern jewelry e-commerce website for Chauhan Jewellers, featuring e
    cd chauhan-jewellers
    ```
 
-2. **Install dependencies**
+2. **Install Backend Dependencies**
    ```bash
+   cd backend
    npm install
    ```
 
-3. **Start development server**
+3. **Install Frontend Dependencies**
    ```bash
-   npm run dev
+   cd ../frontend
+   npm install
    ```
 
-4. **Open your browser**
-   Navigate to `http://localhost:5173`
+4. **Start the Backend Server**
+   ```bash
+   cd ../backend
+   npm start
+   ```
+   The backend will run on `http://localhost:5000`
+
+5. **Start the Frontend Development Server**
+   ```bash
+   cd ../frontend
+   npm run dev
+   ```
+   The frontend will run on `http://localhost:5173`
 
 ## 📁 Project Structure
 
 ```
 chauhan-jewellers/
-├── public/
-│   └── vite.svg              # Vite logo
-├── src/
-│   ├── assets/
-│   │   └── react.svg         # React logo
-│   ├── App.jsx               # Main application component
-│   ├── App.css               # Custom animations and styles
-│   ├── index.css             # Tailwind CSS and base styles
-│   └── main.jsx              # Application entry point
-├── index.html                # HTML template
-├── package.json              # Dependencies and scripts
-├── tailwind.config.js        # Tailwind configuration
-├── vite.config.js            # Vite configuration
-└── README.md                 # This file
+├── frontend/                 # React frontend
+│   ├── src/
+│   │   ├── components/      # React components
+│   │   │   └── InstagramGallery.jsx
+│   │   ├── App.jsx          # Main App component
+│   │   ├── main.jsx         # Entry point
+│   │   └── App.css          # Styles
+│   ├── public/              # Static assets
+│   └── package.json
+├── backend/                 # Node.js backend
+│   ├── server.js            # Express server
+│   ├── admin.html           # Admin panel
+│   ├── admin.js             # Admin panel JavaScript
+│   ├── database.json       # Product database
+│   ├── uploads/             # Image uploads
+│   └── package.json
+└── README.md               # This file
 ```
 
-## 🎨 Customization
+## 🎯 API Endpoints
 
-### **Color Scheme**
-The website uses a custom amber/orange color palette defined in `tailwind.config.js`:
+### Products
+- `GET /api/products` - Get all products
+- `GET /api/products/:id` - Get single product
+- `POST /api/products` - Add new product (admin)
+- `PUT /api/products/:id` - Update product (admin)
+- `DELETE /api/products/:id` - Delete product (admin)
 
-```javascript
-colors: {
-  gold: {
-    50: '#fffdf0',
-    // ... more shades
-    950: '#713f12',
-  },
-  luxury: {
-    50: '#fdfaf7',
-    // ... more shades
-    950: '#5c3d1f',
-  }
-}
-```
+### Categories
+- `GET /api/categories` - Get all categories
 
-### **Animations**
-Custom animations are defined in `App.css`:
-- `gradient-shift`: Animated gradient text
-- `float-gold/diamond/kundan/silver`: Floating jewelry elements
+### Contact
+- `POST /api/contact` - Submit contact form
 
-### **Typography**
-- **Display Font**: Playfair Display (serif, for headings)
-- **Body Font**: Inter (sans-serif, for content)
+## 🔧 Admin Panel
 
-## 📱 Responsive Breakpoints
+Access the admin panel at: `http://localhost:5000/admin.html`
 
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-- **Large Desktop**: > 1280px
+### Features:
+- **Product Management** - Add, edit, delete products
+- **Image Upload** - Drag and drop image uploads
+- **Statistics** - View product counts and featured items
+- **Real-time Updates** - Instant product list updates
 
-## 🚀 Deployment
+## 📱 Mobile Responsiveness
 
-### **Build for Production**
-```bash
-npm run build
-```
+The website is fully responsive and works seamlessly on:
+- Desktop (1200px+)
+- Tablet (768px - 1199px)
+- Mobile (320px - 767px)
 
-### **Preview Production Build**
-```bash
-npm run preview
-```
+## 🎨 Design System
 
-### **Deploy to Netlify/Vercel**
-1. Run `npm run build`
-2. Upload the `dist` folder to your hosting provider
-3. Configure your domain and SSL
+### Colors
+- **Primary**: Yellow (#fbbf24, #f59e0b)
+- **Secondary**: Gray gradients
+- **Accent**: White and black contrasts
+
+### Typography
+- **Headings**: Custom display fonts
+- **Body**: System fonts for optimal performance
+
+### Animations
+- **Framer Motion**: Smooth page transitions
+- **Hover Effects**: Interactive elements
+- **Loading States**: Skeleton screens
+
+## 🔒 Security Features
+
+- **Helmet.js**: Security headers
+- **CORS**: Cross-origin resource sharing
+- **Rate Limiting**: API protection
+- **File Upload Validation**: Image type and size restrictions
+- **Input Sanitization**: XSS protection
+
+## 📈 Performance Optimizations
+
+- **Lazy Loading**: Images and components
+- **Code Splitting**: React.lazy implementation
+- **Image Optimization**: WebP support
+- **Caching**: Browser caching headers
+
+## 🛠 Technologies Used
+
+### Frontend
+- **React 18** - UI framework
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **Lucide React** - Icons
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **Multer** - File uploads
+- **Helmet** - Security
+- **CORS** - Cross-origin requests
 
 ## 📞 Business Information
 
 **Chauhan Jewellers**
-- 📍 **Address**: City Rd, Gate, Batala, Punjab 143505
-- 📞 **Phone**: +91 83053 00009
-- ⏰ **Hours**: Open · Closes 8:00 PM
-- 🌐 **Social**: [Facebook](https://www.facebook.com/chauhanjewellers) | [Instagram](https://www.instagram.com/chauhan_jewellers_batala)
-
-## 🔧 Available Scripts
-
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run lint` | Run ESLint |
-| `npm run preview` | Preview production build |
-
-## 🎯 Performance Features
-
-- ⚡ **Code Splitting**: Automatic code splitting with Vite
-- 🗜️ **Optimized Assets**: Image and asset optimization
-- 🔄 **Hot Module Replacement**: Instant development feedback
-- 📦 **Tree Shaking**: Eliminates unused code
-- 🎨 **CSS Purging**: Removes unused Tailwind CSS
+- 📍 City Road, Bhandari Gate, Batala, Punjab 143505
+- 📞 +91 83053 00009
+- 🕐 Open - Closes 8:00 PM
+- 🌐 [chauhanjewellers.com](https://chauhanjewellers.com)
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
 5. Open a Pull Request
 
 ## 📄 License
 
-This project is proprietary to Chauhan Jewellers. All rights reserved.
+This project is proprietary to Chauhan Jewellers.
 
-## 🎉 Acknowledgments
+## 🚀 Future Enhancements
 
-- **React Team** - For the amazing React framework
-- **Tailwind CSS** - For the utility-first CSS framework
-- **Framer Motion** - For the smooth animations
-- **Lucide Icons** - For the beautiful icon set
-- **Vite Team** - For the lightning-fast build tool
+- **Payment Gateway Integration** - Razorpay/PayU
+- **User Authentication** - Customer accounts
+- **Order Management** - Complete order processing
+- **Live Chat** - Customer support
+- **SEO Optimization** - Search engine optimization
+- **PWA Support** - Progressive web app
+- **Multi-language Support** - Hindi/Punjabi
+
+## 📞 Support
+
+For technical support:
+- 📧 Email: tech@chauhanjewellers.com
+- 📞 Phone: +91 83053 00009
 
 ---
 
-**Made with ❤️ for Chauhan Jewellers - The Family Jeweller for Generations**
+**Built with ❤️ for Chauhan Jewellers**

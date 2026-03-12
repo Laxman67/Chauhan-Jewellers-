@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sun, Moon, Sparkles, Gem, Crown, Star } from 'lucide-react';
+import {  Moon, Sparkles, Gem, Crown, Star } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const themeIcons = {
