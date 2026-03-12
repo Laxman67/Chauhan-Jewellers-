@@ -49,58 +49,167 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-amber-50 to-beige-50 text-gray-900">
-      {/* Modern Navigation */}
-      <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-xl shadow-xl z-50 py-4 border-b border-amber-200/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
-          <motion.div
-            className="flex items-center gap-3 text-2xl font-bold bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg">
-              <Crown className="w-6 h-6 text-white" />
+      {/* Sleek Modern Navigation */}
+      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-2xl shadow-lg z-50 border-b border-gray-200/20">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <motion.div
+              className="flex items-center gap-3 group cursor-pointer"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <div className="relative">
+                <div className="w-12 h-12 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                  <Crown className="w-7 h-7 text-white" />
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent font-display">Chauhan Jewellers</h1>
+                <p className="text-xs text-gray-600 font-light tracking-wide">Since 1965</p>
+              </div>
+            </motion.div>
+
+            {/* Desktop Navigation Menu */}
+            <div className="hidden lg:flex items-center gap-8">
+              <motion.a
+                href="#collections"
+                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+                whileHover={{ y: -2 }}
+              >
+                Collections
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-300"></span>
+              </motion.a>
+              <motion.a
+                href="#about"
+                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+                whileHover={{ y: -2 }}
+              >
+                About
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-300"></span>
+              </motion.a>
+              <motion.a
+                href="#map"
+                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+                whileHover={{ y: -2 }}
+              >
+                Visit Us
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-300"></span>
+              </motion.a>
+              <motion.div className="flex items-center gap-3 pl-6 border-l border-gray-200">
+                <motion.a
+                  href="tel:+918305300009"
+                  className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-5 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Phone size={16} />
+                  <span className="hidden xl:inline">+91 83053 00009</span>
+                  <span className="xl:hidden">Call</span>
+                </motion.a>
+                <motion.button
+                  onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="flex items-center gap-2 bg-gray-900 text-amber-400 px-5 py-2.5 rounded-full font-medium border border-amber-500/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-800 hover:border-amber-400 hover:scale-105"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <ShoppingBag size={16} />
+                  <span className="hidden xl:inline">Shop</span>
+                </motion.button>
+              </motion.div>
             </div>
-            <span className="font-display">Chauhan Jewellers</span>
-          </motion.div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="tel:+918305300009" className="flex items-center gap-2 bg-linear-to-r from-amber-500 to-amber-600 text-black px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-              <Phone size={18} />
-              +91 83053 00009
-            </a>
-            <button className="flex items-center gap-2 bg-gray-900 text-amber-400 px-6 py-3 rounded-full font-semibold border border-amber-500/50 transition-all duration-300 hover:bg-gray-800 hover:border-amber-400 hover:scale-105">
-              <ShoppingBag size={18} />
-              Shop Now
-            </button>
+            {/* Mobile Menu Button */}
+            <motion.button
+              className="lg:hidden text-gray-700 hover:text-amber-600 transition-colors duration-300"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              whileTap={{ scale: 0.9 }}
+            >
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </motion.button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-amber-600"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Enhanced Mobile Menu */}
         {mobileMenuOpen && (
           <motion.div
-            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-amber-200/50"
+            className="lg:hidden bg-white/95 backdrop-blur-2xl border-t border-gray-200/20"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="px-6 py-4 space-y-4">
-              <a href="tel:+918305300009" className="block text-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-full font-semibold">
-                <Phone size={18} className="inline mr-2" />
-                +91 83053 00009
-              </a>
-              <button className="w-full bg-amber-50 text-amber-700 px-6 py-3 rounded-full font-semibold border-2 border-amber-300/50">
-                <ShoppingBag size={18} className="inline mr-2" />
-                Shop Now
-              </button>
+            <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6 space-y-4">
+              <motion.div className="space-y-2">
+                <a
+                  href="#collections"
+                  className="block px-4 py-3 text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg font-medium transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Collections
+                </a>
+                <a
+                  href="#about"
+                  className="block px-4 py-3 text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg font-medium transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </a>
+                <a
+                  href="#map"
+                  className="block px-4 py-3 text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg font-medium transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Visit Us
+                </a>
+              </motion.div>
+              <div className="pt-4 border-t border-gray-200 space-y-3">
+                <a
+                  href="tel:+918305300009"
+                  className="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
+                >
+                  <Phone size={18} />
+                  +91 83053 00009
+                </a>
+                <button
+                  onClick={() => {
+                    document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' });
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full flex items-center justify-center gap-2 bg-gray-900 text-amber-400 px-6 py-3 rounded-full font-medium border border-amber-500/50 shadow-lg transition-all duration-300 hover:bg-gray-800 hover:border-amber-400 hover:scale-105"
+                >
+                  <ShoppingBag size={18} />
+                  Shop Now
+                </button>
+              </div>
+              <div className="flex justify-center gap-4 pt-4 border-t border-gray-200">
+                <a
+                  href="https://www.facebook.com/chauhanjewellers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-amber-600 transition-colors duration-300"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a
+                  href="https://www.instagram.com/chauhan_jewellers_batala"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-amber-600 transition-colors duration-300"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a
+                  href="https://wa.me/918305300009?text=Hi%20Chauhan%20Jewellers!%20I'm%20interested%20in%20your%20jewelry%20collection."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-amber-600 transition-colors duration-300"
+                >
+                  <MessageCircle size={20} />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
