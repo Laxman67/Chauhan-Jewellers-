@@ -12,33 +12,47 @@ function AppContent() {
 
   React.useEffect(() => {
     // Fetch products and categories from backend
-    const fetchData = async () => {
-      try {
-        const productsResponse = await fetch('http://localhost:5000/api/products');
-        const productsData = await productsResponse.json();
-        setProducts(productsData);
-        
-        const categoriesResponse = await fetch('http://localhost:5000/api/categories');
-        const categoriesData = await categoriesResponse.json();
-        setCategories(categoriesData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+    // const fetchData = async () => {
+    //   try {
+    //     // const productsResponse = await fetch('http://localhost:5000/api/products');
+    //     // const productsData = await productsResponse.json();
+    //     // setProducts(productsData);
 
-    fetchData();
+    //     // const categoriesResponse = await fetch('http://localhost:5000/api/categories');
+    //     // const categoriesData = await categoriesResponse.json();
+    //     // setCategories(categoriesData);
+     
+    //   } catch (error) {
+    //     console.error('Error fetching data:', error);
+    //     // Set mock data for demonstration
+      
+    //   }
+    // };
+
+    // fetchData();
+
+         setProducts([
+          { id: 1, name: 'Gold Necklace', category: 'gold',  description: '22K Gold Necklace', featured: true, image: 'https://i.pinimg.com/originals/03/e2/5b/03e25bd0498ea5e88293cb24aa4769a0.jpg' },
+          { id: 2, name: 'Diamond Ring', category: 'diamond', description: 'IGI Certified Diamond', featured: true, image: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRjsJf_xdDi9_DRax91msBMOOt1U1lXKOeTEyJ3tDGWx8jAWr7W96OB0yGtIgNtDg7oXyotHtOMES0oFBh2bdzZwUSNtSds' },
+          { id: 3, name: 'Silver Earrings', category: 'silver',description: '92.5 Sterling Silver', featured: false, image: 'https://m.media-amazon.com/images/I/515fm8t5wfL._SY695_.jpg' },
+          { id: 4, name: 'Jadau Set', category: 'jadau',  description: 'Traditional Jadau Kundan', featured: true, image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS00Xb_0E082Bmai__yilthekKH9sNcaVmfD_XznjJy71x_I1m4F1WOl2TOfb-8PjR-_qiKAjBEG6gRUXX-UgdoxJOfL_5X' },
+          { id: 5, name: 'Gold Bangles', category: 'gold',  description: '22K Gold Bangles', featured: false, image: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSqpScCze7HgHc9AM9Iu7ogyy6VM2yWgxuYF5Moj9PCJClED5dTklecxxcOXXQb8K5DYMVgZBNArkgSSSgOt4Lh3HcpnS1UQQ' },
+          { id: 6, name: 'Diamond Pendant', category: 'diamond',description: 'Certified Diamond Pendant', featured: false, image: 'https://www.nicecreamlondon.com/cdn/shop/files/IMG-8006.png?v=1767518864&width=1800' },
+          { id: 7, name: 'Silver Chain', category: 'silver', description: 'Sterling Silver Chain', featured: false, image: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRLDzAsqd8b3IP8-6trodnbUjur5HrAmtLULipUuW1JEKl4MtddRTKIzcmouzRyhKceSMRVBIbIBm1O8jdlojTbT6XZoNqPOQ' },
+          { id: 8, name: 'Jadau Necklace', category: 'jadau', description: 'Royal Jadau Design', featured: false, image: 'https://rubans.in/cdn/shop/files/rubans-24k-gold-plated-handcrafted-ruby-emerald-studded-pearl-beaded-jewellery-set-necklace-set-1151160635.jpg?format=webp&v=1755716996&width=900' },
+        ]);
   }, []);
 
-  const filteredProducts = selectedCategory === 'all' 
-    ? products 
+  const filteredProducts = selectedCategory === 'all'
+    ? products
     : products.filter(p => p.category === selectedCategory);
-  
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-amber-50 to-beige-50 text-gray-900">
       {/* Modern Navigation */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-xl shadow-xl z-50 py-4 border-b border-amber-200/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
-          <motion.div 
+          <motion.div
             className="flex items-center gap-3 text-2xl font-bold bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -49,10 +63,10 @@ function AppContent() {
             </div>
             <span className="font-display">Chauhan Jewellers</span>
           </motion.div>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="tel:+918305300009" className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-black px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+            <a href="tel:+918305300009" className="flex items-center gap-2 bg-linear-to-r from-amber-500 to-amber-600 text-black px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
               <Phone size={18} />
               +91 83053 00009
             </a>
@@ -63,7 +77,7 @@ function AppContent() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden text-amber-600"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -73,7 +87,7 @@ function AppContent() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             className="md:hidden bg-white/95 backdrop-blur-xl border-t border-amber-200/50"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,7 +110,7 @@ function AppContent() {
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
-          <video 
+          <video
             className="w-full h-full object-cover"
             autoPlay
             muted
@@ -105,13 +119,13 @@ function AppContent() {
           >
             <source src="https://assets.mixkit.co/videos/preview/mixkit-elegant-indian-woman-with-traditional-jewelry-39880-large.mp4" type="video/mp4" />
             {/* Fallback for browsers that don't support the video */}
-            <img 
-              src="https://images.unsplash.com/photo-1617029192839-5a5e5c7a3f5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+            <img
+              src="https://images.unsplash.com/photo-1617029192839-5a5e5c7a3f5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
               alt="Indian model with gold jewelry"
               className="w-full h-full object-cover"
             />
           </video>
-          
+
           {/* Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-amber-900/60 via-amber-800/50 to-amber-900/60"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/40"></div>
@@ -119,7 +133,7 @@ function AppContent() {
           <div className="absolute inset-0 bg-gradient-to-br from-amber-100/20 via-transparent to-beige-100/20"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_70%)]"></div>
         </div>
-        
+
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -144,15 +158,15 @@ function AppContent() {
             <Crown size={70} />
           </motion.div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight mb-6 font-display tracking-wide"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -161,32 +175,32 @@ function AppContent() {
               The Family Jeweller
               <span className="block text-gray-200 font-light tracking-wider">for Generations</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-lg text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Luxury Gold & Diamond Jewellery in Batala. 
+              Luxury Gold & Diamond Jewellery in Batala.
               Discover timeless elegance and craftsmanship at Batala's most trusted jewelry destination.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <motion.button 
+              <motion.button
                 className="flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-3 rounded-full text-sm font-light transition-all duration-300 hover:bg-gray-800 hover:scale-105"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Visit Our Store
+                <a href='#map' className="flex items-center gap-2"> Visit Our Store</a>
                 <ChevronRight size={16} />
               </motion.button>
-              <motion.button 
+              <motion.button
                 className="bg-transparent text-white px-8 py-3 rounded-full text-sm font-light border border-gray-400/30 transition-all duration-300 hover:bg-white/10 hover:border-gray-400/50 hover:scale-105"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -195,19 +209,19 @@ function AppContent() {
                 View Collection
               </motion.button>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="flex items-center justify-center gap-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-gray-300 fill-current" size={20} />
-                  ))}
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-300 fill-current" size={20} />
+                ))}
               </div>
-              <span className="text-gray-300 font-light text-sm">5.0 (282 reviews)</span>
+              <span className="text-gray-300 font-light text-sm">5.0 (320+ reviews)</span>
             </motion.div>
           </motion.div>
         </div>
@@ -216,99 +230,223 @@ function AppContent() {
       {/* Product Collections Section */}
       <section id="collections" className="py-24 lg:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 font-display tracking-wide">Jewellery Collections</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12 font-light">Discover our handcrafted jewelry pieces that blend tradition with contemporary elegance</p>
-            
+
             {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              <motion.div 
-                className="flex items-center gap-2 bg-white text-gray-700 px-4 py-2 rounded-full border border-gray-200"
+            <div className="flex flex-wrap justify-center gap-6 mb-16">
+              <motion.div
+                className="group relative bg-gradient-to-r from-amber-50 to-amber-100/80 text-gray-800 px-6 py-3 rounded-2xl border border-amber-200/50 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -2 }}
               >
-                <Shield size={16} />
-                <span className="text-sm font-light">BIS Hallmarked</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <img src="/bis.webp" alt="BIS Hallmarked" className='w-8 h-8 object-contain' />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-gray-900">BIS Hallmarked</span>
+                    <span className="text-xs text-gray-600">Certified Quality</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/10 to-amber-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
-              <motion.div 
-                className="flex items-center gap-2 bg-white text-gray-700 px-4 py-2 rounded-full border border-gray-200"
+
+              <motion.div
+                className="group relative bg-gradient-to-r from-blue-50 to-blue-100/80 text-gray-800 px-6 py-3 rounded-2xl border border-blue-200/50 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -2 }}
               >
-                <Award size={16} />
-                <span className="text-sm font-light">IGI Certified</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <img src="/igi.jpg" alt="IGI Certified" className='w-8 h-8 object-contain' />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-gray-900">IGI Certified</span>
+                    <span className="text-xs text-gray-600">Diamond Authenticity</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-blue-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
-              <motion.div 
-                className="flex items-center gap-2 bg-white text-gray-700 px-4 py-2 rounded-full border border-gray-200"
+
+              <motion.div
+                className="group relative bg-gradient-to-r from-rose-50 to-rose-100/80 text-gray-800 px-6 py-3 rounded-2xl border border-rose-200/50 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -2 }}
               >
-                <Heart size={16} />
-                <span className="text-sm font-light">Trusted Since 1965</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <Heart size={20} className="text-rose-500" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-gray-900">Trusted Since 1965</span>
+                    <span className="text-xs text-gray-600">58 Years of Excellence</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-rose-400/10 to-rose-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
-              <motion.div 
-                className="flex items-center gap-2 bg-white text-gray-700 px-4 py-2 rounded-full border border-gray-200"
+
+              <motion.div
+                className="group relative bg-gradient-to-r from-emerald-50 to-emerald-100/80 text-gray-800 px-6 py-3 rounded-2xl border border-emerald-200/50 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -2 }}
               >
-                <Shield size={16} />
-                <span className="text-sm font-light">H/M Hallmarked</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <Shield size={20} className="text-emerald-500" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-gray-900">H/M Hallmarked</span>
+                    <span className="text-xs text-gray-600">Purity Guaranteed</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-emerald-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Featured Collections Showcase */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {categories.map((category, index) => {
-              const categoryProducts = products.filter(p => p.category === category.id);
-              const featuredProduct = categoryProducts.find(p => p.featured) || categoryProducts[0];
-              
-              return (
-                <motion.div
-                  key={category.id}
-                  className="relative group cursor-pointer"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                  onClick={() => setSelectedCategory(category.id)}
-                >
-                  <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
-                    <div className="relative h-40 bg-gray-50 flex items-center justify-center">
-                      <div className="text-5xl mb-2">{category.icon}</div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div className="p-6 text-center">
-                      <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">{category.name}</h3>
-                      <p className="text-gray-500 text-sm mb-4 font-light">{categoryProducts.length} Exclusive Designs</p>
-                      <div className="flex items-center justify-center gap-2 text-gray-700">
-                        <span className="text-sm font-light">Explore Collection</span>
-                        <ChevronRight size={14} />
-                      </div>
-                    </div>
+            {/* Gold Jewellery Card */}
+            <motion.div
+              className="relative group cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+              onClick={() => setSelectedCategory('gold')}
+            >
+              <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
+                <div className="relative h-40 bg-gradient-to-br from-amber-100 to-amber-50 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/collection-images/gold-jew.png"
+                    alt="Gold Jewellery"
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/20 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">Gold Jewellery</h3>
+                  <p className="text-gray-500 text-sm mb-4 font-light">22K & 24K Pure Gold</p>
+                  <div className="flex items-center justify-center gap-2 text-gray-700">
+                    <span className="text-sm font-light">Explore Collection</span>
+                    <ChevronRight size={14} />
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Diamonds Jewellery Card */}
+            <motion.div
+              className="relative group cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+              onClick={() => setSelectedCategory('diamond')}
+            >
+              <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
+                <div className="relative h-40 bg-gradient-to-br from-blue-50 to-gray-50 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/collection-images/diamond-jew.png"
+                    alt="Diamonds Jewellery"
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">Diamonds Jewellery</h3>
+                  <p className="text-gray-500 text-sm mb-4 font-light">IGI Certified Diamonds</p>
+                  <div className="flex items-center justify-center gap-2 text-gray-700">
+                    <span className="text-sm font-light">Explore Collection</span>
+                    <ChevronRight size={14} />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Silver Jewellery Card */}
+            <motion.div
+              className="relative group cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+              onClick={() => setSelectedCategory('silver')}
+            >
+              <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
+                <div className="relative h-40 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/collection-images/silver-jew.png"
+                    alt="Silver Jewellery"
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-700/20 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">Silver Jewellery</h3>
+                  <p className="text-gray-500 text-sm mb-4 font-light">92.5 Sterling Silver</p>
+                  <div className="flex items-center justify-center gap-2 text-gray-700">
+                    <span className="text-sm font-light">Explore Collection</span>
+                    <ChevronRight size={14} />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Jadau Kundans Card */}
+            <motion.div
+              className="relative group cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+              onClick={() => setSelectedCategory('jadau')}
+            >
+              <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
+                <div className="relative h-40 bg-gradient-to-br from-rose-50 to-pink-50 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/collection-images/jadau-jew.png"
+                    alt="Jadau Kundans"
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-rose-900/20 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">Jadau Kundans</h3>
+                  <p className="text-gray-500 text-sm mb-4 font-light">Traditional Artistry</p>
+                  <div className="flex items-center justify-center gap-2 text-gray-700">
+                    <span className="text-sm font-light">Explore Collection</span>
+                    <ChevronRight size={14} />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           {/* Premium Collection Banner */}
-          <motion.div 
+          <motion.div
             className="bg-gray-100 rounded-2xl p-8 mb-16 border border-gray-200"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -337,7 +475,7 @@ function AppContent() {
                   </div>
                 </div>
               </div>
-              <motion.button 
+              <motion.button
                 className="bg-gray-900 text-white px-6 py-3 rounded-full font-light text-sm transition-all duration-300 hover:bg-gray-800 hover:scale-105 flex items-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -352,29 +490,51 @@ function AppContent() {
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${
-                selectedCategory === 'all'
+              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'all'
                   ? 'bg-gray-900 text-white'
                   : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
-              }`}
+                }`}
             >
               All Collections
             </button>
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${
-                  selectedCategory === category.id
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+            <button
+              onClick={() => setSelectedCategory('gold')}
+              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'gold'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
                 }`}
-              >
-                {category.icon} {category.name}
-              </button>
-            ))}
+            >
+              💛 Gold Jewellery
+            </button>
+            <button
+              onClick={() => setSelectedCategory('diamond')}
+              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'diamond'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                }`}
+            >
+              💎 Diamonds Jewellery
+            </button>
+            <button
+              onClick={() => setSelectedCategory('silver')}
+              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'silver'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                }`}
+            >
+              🥈 Silver Jewellery
+            </button>
+            <button
+              onClick={() => setSelectedCategory('jadau')}
+              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'jadau'
+                  ? 'bg-gray-900 text-white'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                }`}
+            >
+              👑 Jadau Kundans
+            </button>
           </div>
-          
+
           {/* Products Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredProducts.map((product, index) => (
@@ -388,8 +548,8 @@ function AppContent() {
                 whileHover={{ y: -2 }}
               >
                 <div className="relative mb-3">
-                  <img 
-                    src={`http://localhost:5000${product.image}`} 
+                  <img
+                    src={product.image}
                     alt={product.name}
                     className="w-full h-64 object-cover"
                     onError={(e) => {
@@ -401,7 +561,7 @@ function AppContent() {
                       Featured
                     </div>
                   )}
-                  
+
                   {/* Certification Badges on Product */}
                   <div className="absolute top-2 left-2 flex flex-col gap-1">
                     {product.category === 'gold' && (
@@ -417,13 +577,13 @@ function AppContent() {
                       </div>
                     )}
                   </div>
-                  
+
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-light text-gray-900 mb-2 tracking-wide">{product.name}</h3>
                   <p className="text-gray-500 text-sm mb-3 line-clamp-2 font-light">{product.description}</p>
-                  
+
                   {/* Category and Trust Indicators */}
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-light text-gray-700 bg-gray-100 px-2 py-1 rounded-full">
@@ -436,9 +596,9 @@ function AppContent() {
                       <span className="text-xs text-gray-600 font-light">Certified</span>
                     )}
                   </div>
-                  
+
                   <div className="text-xl font-light text-gray-900 mb-3">{product.price}</div>
-                  
+
                   {/* Additional Trust Info */}
                   <div className="flex items-center gap-2 mb-4 text-xs text-gray-400">
                     <Heart size={10} className="text-gray-400" />
@@ -456,8 +616,8 @@ function AppContent() {
                       </>
                     )}
                   </div>
-                  
-                  <motion.button 
+
+                  <motion.button
                     className="w-full bg-gray-900 text-white px-4 py-2.5 rounded-full font-light text-sm transition-all duration-300 hover:bg-gray-800 hover:scale-105 flex items-center justify-center gap-2"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -472,24 +632,20 @@ function AppContent() {
         </div>
       </section>
 
-      {/* <InstagramGallery /> */}
+
 
       {/* About Section */}
       <section className="py-24 lg:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-           
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 font-display tracking-wide">About Chauhan Jewellers</h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Chauhan Jewellers is one of Batala's most trusted jewellery destinations located at City Road, Bhandari Gate.
-              With hundreds of happy customers and a 5⭐ reputation, we bring timeless craftsmanship and elegant jewellery designs.
-            </p>
+
+          <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 font-display tracking-wide">About Chauhan Jewellers</h2>
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+            Chauhan Jewellers is one of Batala's most trusted jewellery destinations located at City Road, Bhandari Gate.
+            With hundreds of happy customers and a 5⭐ reputation, we bring timeless craftsmanship and elegant jewellery designs.
+          </p>
         </div>
       </section>
 
-      {/* Google Maps Section */}
-      <section className="py-24 lg:py-32 bg-white">
-       
-      </section>
 
       {/* Contact Section */}
       <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-amber-50">
@@ -498,7 +654,7 @@ function AppContent() {
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-display tracking-wide">Visit Our Showroom</h2>
             <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto">Experience our exquisite collection in person at our premium Batala location</p>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
             {/* Contact Information */}
             <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 flex flex-col h-full">
@@ -512,7 +668,7 @@ function AppContent() {
                     <p className="text-gray-700 text-base leading-relaxed">City Rd, Bhandari Gate<br />Batala, Punjab 143505</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-5 group">
                   <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-amber-200 transition-colors duration-300">
                     <Phone size={20} className="text-amber-600" />
@@ -522,7 +678,7 @@ function AppContent() {
                     <p className="text-base"><a href="tel:+918305300009" className="text-amber-600 hover:text-amber-700 transition-colors duration-300 font-medium">+91 83053 00009</a></p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-5 group">
                   <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-amber-200 transition-colors duration-300">
                     <Clock size={20} className="text-amber-600" />
@@ -533,7 +689,7 @@ function AppContent() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-10 pt-8 border-t border-gray-100">
                 <p className="text-sm text-gray-600 mb-6 font-medium">Connect With Us</p>
                 <div className="flex flex-wrap gap-3">
@@ -554,7 +710,7 @@ function AppContent() {
             </div>
 
             {/* Map */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col h-full">
+            <div id='map' className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col h-full">
               <div className="p-6 lg:p-8 flex-grow flex flex-col">
                 <h3 className="text-xl font-semibold text-gray-900 mb-6">Find Us on Map</h3>
                 <div className="rounded-xl overflow-hidden border border-gray-200 flex-grow">
