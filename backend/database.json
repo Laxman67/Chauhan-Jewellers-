@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Traditional Gold Necklace",
+    "category": "gold",
+    "price": "₹45,000",
+    "description": "Exquisite 22K gold necklace with intricate traditional design featuring peacock motifs and fine craftsmanship",
+    "image": "/uploads/gold-necklace-1.jpg",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Diamond Engagement Ring",
+    "category": "diamond",
+    "price": "₹85,000",
+    "description": "Stunning solitaire diamond ring set in 18K gold with perfect cut and clarity for that special moment",
+    "image": "/uploads/diamond-ring-1.jpg",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name:": "Kundan Bridal Set",
+    "category": "kundan",
+    "price": "₹1,25,000",
+    "description": "Traditional Kundan jewelry set including necklace, earrings, and maang tikka for the perfect bridal look",
+    "image": "/uploads/kundan-set-1.jpg",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Silver Anklet",
+    "category": "silver",
+    "price": "₹3,500",
+    "description": "Elegant silver anklet with delicate ghungroos and traditional design patterns",
+    "image": "/uploads/silver-anklet-1.jpg",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "name": "Gold Jhumka Earrings",
+    "category": "gold",
+    "price": "₹28,000",
+    "description": "Traditional gold jhumka earrings with intricate filigree work and pearl drops",
+    "image": "/uploads/gold-jhumka-1.jpg",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "name": "Diamond Tennis Bracelet",
+    "category": "diamond",
+    "price": "₹1,50,000",
+    "description": "Elegant diamond tennis bracelet with continuous line of brilliant cut diamonds",
+    "image": "/uploads/diamond-bracelet-1.jpg",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "Kundan Choker",
+    "category": "kundan",
+    "price": "₹75,000",
+    "description": "Royal Kundan choker necklace with meenakari work and traditional design",
+    "image": "/uploads/kundan-choker-1.jpg",
+    "featured": true
+  },
+  {
+    "id": 8,
+    "name": "Silver Chain",
+    "category": "silver",
+    "price": "₹8,500",
+    "description": "Classic silver chain with modern design and perfect for daily wear",
+    "image": "/uploads/silver-chain-1.jpg",
+    "featured": false
+  }
+]
