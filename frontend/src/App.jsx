@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Phone, MapPin, Clock, Facebook, Instagram, ChevronRight, Sparkles, Gem, Crown, Heart, MessageCircle, Diamond, ShoppingBag, Shield, Award, TrendingUp, Menu, X } from 'lucide-react';
+import { Star, Phone, MapPin, Clock, Facebook, Instagram, ChevronRight, Sparkles, Gem, Crown, Heart, MessageCircle, Diamond, ShoppingBag, Shield, Award, TrendingUp, Menu, X, Zap, Globe, Mail, Calendar, Users, CheckCircle, ArrowRight, Play, Volume2 } from 'lucide-react';
 // import InstagramGallery from './components/InstagramGallery';
 import './App.css';
 
@@ -48,69 +48,82 @@ function AppContent() {
     : products.filter(p => p.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-amber-50 to-beige-50 text-gray-900">
-      {/* Sleek Modern Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-2xl shadow-lg z-50 border-b border-gray-200/20">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-amber-50/30 to-white text-gray-900 overflow-x-hidden">
+      {/* Ultra-Premium Navigation */}
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-3xl shadow-xl z-50 border-b border-amber-100/30">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
+          <div className="flex justify-between items-center h-24">
+            {/* Enhanced Logo */}
             <motion.div
-              className="flex items-center gap-3 group cursor-pointer"
+              className="flex items-center gap-4 group cursor-pointer"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <div className="relative">
-                <div className="w-12 h-12 bg-linear-to-br from-amber-400 via-amber-500 to-amber-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                 <a href="/"> <Crown className="w-7 h-7 text-white" /></a>
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 rounded-2xl flex items-center justify-center shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                  <div className="relative">
+                    <Crown className="w-9 h-9 text-white" />
+                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-full animate-pulse shadow-lg"></div>
+                  </div>
                 </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent font-display">Chauhan Jewellers</h1>
-                <p className="text-xs text-gray-600 font-light tracking-wide">Since 1965</p>
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 bg-clip-text text-transparent font-display tracking-tight">Chauhan Jewellers</h1>
+                <div className="flex items-center gap-2">
+                  <p className="text-sm text-gray-600 font-light tracking-wide">Since 1965</p>
+                  <div className="flex items-center gap-1">
+                    {[...Array(3)].map((_, i) => (
+                      <Sparkles key={i} className="w-3 h-3 text-amber-500" />
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
 
-            {/* Desktop Navigation Menu */}
-            <div className="hidden lg:flex items-center gap-8">
+            {/* Premium Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-10">
               <motion.a
                 href="#collections"
-                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group py-2"
                 whileHover={{ y: -2 }}
               >
-                Collections
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10">Collections</span>
+                <div className="absolute inset-0 bg-amber-50/50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
               </motion.a>
               <motion.a
                 href="#about"
-                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group py-2"
                 whileHover={{ y: -2 }}
               >
-                About
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10">About</span>
+                <div className="absolute inset-0 bg-amber-50/50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
               </motion.a>
               <motion.a
                 href="#map"
-                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group"
+                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group py-2"
                 whileHover={{ y: -2 }}
               >
-                Visit Us
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10">Visit Us</span>
+                <div className="absolute inset-0 bg-amber-50/50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
               </motion.a>
-              <motion.div className="flex items-center gap-3 pl-6 border-l border-gray-200">
+              <motion.div className="flex items-center gap-4 pl-8 border-l border-amber-200">
                 <motion.a
                   href="tel:+918305300009"
-                  className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-5 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="flex items-center gap-3 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-6 py-3 rounded-full font-medium shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:from-amber-600 hover:via-amber-700 hover:to-amber-800"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Phone size={16} />
-                  <span className="hidden xl:inline">+91 83053 00009</span>
-                  <span className="xl:hidden">Call</span>
+                  <Phone size={18} className="animate-pulse" />
+                  <span className="hidden xl:inline font-semibold">+91 83053 00009</span>
+                  <span className="xl:hidden font-semibold">Call</span>
+                  <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
                 </motion.a>
-            
               </motion.div>
             </div>
 
@@ -198,19 +211,18 @@ function AppContent() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        {/* Video Background */}
+      {/* Ultra-Premium Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+        {/* Enhanced Video Background */}
         <div className="absolute inset-0">
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-105"
             autoPlay
             muted
             loop
             playsInline
           >
             <source src="https://www.shutterstock.com/shutterstock/videos/1103687939/preview/stock-footage-bangalore-india-st-april-a-beautiful-indian-female-fashion-model-flaunting-traditional.webm" type="video/mp4" />
-            {/* Fallback for browsers that don't support the video */}
             <img
               src="https://images.unsplash.com/photo-1617029192839-5a5e5c7a3f5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
               alt="Indian model with gold jewelry"
@@ -218,103 +230,170 @@ function AppContent() {
             />
           </video>
 
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20"></div>
+          {/* Enhanced Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
         </div>
 
-        {/* Floating Elements */}
+        {/* Premium Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            animate={{ y: [-20, 20, -20], rotate: [-5, 5, -5] }}
+            animate={{ y: [-30, 30, -30], rotate: [-8, 8, -8], scale: [1, 1.1, 1] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-20 left-10 text-amber-400/20"
+          >
+            <Gem size={80} />
+          </motion.div>
+          <motion.div
+            animate={{ y: [30, -30, 30], rotate: [8, -8, 8], scale: [1, 1.15, 1] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-20 right-10 text-blue-400/20"
+          >
+            <Diamond size={100} />
+          </motion.div>
+          <motion.div
+            animate={{ y: [-25, 25, -25], scale: [1, 1.08, 1], rotate: [0, 180, 360] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/3 left-1/4 text-yellow-400/20"
+          >
+            <Crown size={90} />
+          </motion.div>
+          <motion.div
+            animate={{ y: [20, -20, 20], x: [-10, 10, -10] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-10 text-gray-400/10"
+            className="absolute top-2/3 right-1/3 text-rose-400/20"
           >
-            <Gem size={60} />
-          </motion.div>
-          <motion.div
-            animate={{ y: [20, -20, 20], rotate: [5, -5, 5] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-20 right-10 text-gray-300/10"
-          >
-            <Diamond size={80} />
-          </motion.div>
-          <motion.div
-            animate={{ y: [-15, 15, -15], scale: [1, 1.05, 1] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/3 left-1/4 text-gray-500/10"
-          >
-            <Crown size={70} />
+            <Sparkles size={60} />
           </motion.div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+        <div className=" py-5 max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
           <motion.div
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
+            className="max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1 }}
           >
-            <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight mb-6 font-display tracking-wide"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+            {/* Premium Badge */}
+            <motion.div
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              The Family Jeweller
-              <span className="block text-gray-200 font-light tracking-wider">for Generations</span>
+              <div className="flex items-center gap-1">
+                {[...Array(3)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <span className="text-white text-sm font-medium ">Premium Luxury Jewellery Since 1965</span>
+              <Sparkles className="w-4 h-4 text-amber-400" />
+            </motion.div>
+
+            <motion.h1
+              className="text-6xl md:text-7xl lg:text-8xl font-light text-white leading-tight mb-8 font-display tracking-wide"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              The Family
+              <span className="block bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-300 bg-clip-text text-transparent font-semibold">Jeweller</span>
+              <span className="block text-gray-200 font-light tracking-wider text-4xl md:text-5xl lg:text-6xl mt-2">for Generations</span>
             </motion.h1>
 
             <motion.p
-              className="text-lg text-gray-300 mb-12 leading-relaxed max-w-2xl mx-auto font-light"
-              initial={{ opacity: 0, y: 20 }}
+              className="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto font-light"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Luxury Gold & Diamond Jewellery in Batala.
-              Discover timeless elegance and craftsmanship at Batala's most trusted jewelry destination.
+              Experience the pinnacle of luxury with our exquisite collection of 
+              <span className="text-amber-300 font-medium"> 22K Gold & Certified Diamonds</span>. 
+              Discover timeless elegance at Batala's most trusted jewelry destination.
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
               <motion.button
-                className="flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-3 rounded-full text-sm font-light transition-all duration-300 hover:bg-gray-800 hover:scale-105"
+                className="group relative flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-10 py-4 rounded-full text-base font-medium transition-all duration-500 hover:from-amber-600 hover:via-amber-700 hover:to-amber-800 hover:scale-105 hover:shadow-2xl"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <a href='#map' className="flex items-center gap-2"> Visit Our Store</a>
-                <ChevronRight size={16} />
+                <a href='#map' className="flex items-center gap-3 z-10">
+                  <Crown size={20} />
+                  Visit Our Store
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300"></div>
               </motion.button>
               <motion.button
-                className="bg-transparent text-white px-8 py-3 rounded-full text-sm font-light border border-gray-400/30 transition-all duration-300 hover:bg-white/10 hover:border-gray-400/50 hover:scale-105"
+                className="group relative flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md text-white px-10 py-4 rounded-full text-base font-medium border border-white/30 transition-all duration-500 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-2xl"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })}
               >
+                <Gem size={20} />
                 View Collection
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.button>
             </motion.div>
 
+            {/* Enhanced Trust Indicators */}
             <motion.div
-              className="flex items-center justify-center gap-3"
+              className="flex flex-col sm:flex-row items-center justify-center gap-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 1 }}
             >
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-300 fill-current" size={20} />
-                ))}
+              <div className="flex items-center gap-3">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" size={20} />
+                  ))}
+                </div>
+                <span className="text-gray-300 font-light py-3">5.0 (320+ reviews)</span>
+
               </div>
-              <span className="text-gray-300 font-light text-sm">5.0 (320+ reviews)</span>
+              <div className="flex items-center gap-2 text-gray-300">
+                <Shield size={18} className="text-amber-400" />
+                <span className="text-sm font-light">BIS Certified</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <Award size={18} className="text-amber-400" />
+                <span className="text-sm font-light">IGI Certified</span>
+              </div>
             </motion.div>
           </motion.div>
         </div>
-      </section>
 
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+        >
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-white/60 text-sm font-light">Scroll to explore</span>
+            <motion.div
+              className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center"
+              animate={{ opacity: [0.4, 1, 0.4] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <motion.div
+                className="w-1 h-3 bg-white/60 rounded-full mt-2"
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+        
+      </section>
       {/* Product Collections Section */}
       <section id="collections" className="py-24 lg:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -322,398 +401,395 @@ function AppContent() {
             <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6 font-display tracking-wide">Jewellery Collections</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12 font-light">Discover our handcrafted jewelry pieces that blend tradition with contemporary elegance</p>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center gap-6 mb-16">
-              <motion.div
-                className="group relative bg-gradient-to-r from-amber-50 to-amber-100/80 text-gray-800 px-6 py-3 rounded-2xl border border-amber-200/50 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -2 }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                    <img src="/bis.webp" alt="BIS Hallmarked" className='w-8 h-8 object-contain' />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-semibold text-gray-900">BIS Hallmarked</span>
-                    <span className="text-xs text-gray-600">Certified Quality</span>
-                  </div>
+          {/* Premium Trust Badges */}
+          <div className="flex flex-wrap justify-center gap-8 mb-20">
+            <motion.div
+              className="group relative bg-gradient-to-br from-amber-50 to-amber-100/90 text-gray-800 px-8 py-4 rounded-3xl border border-amber-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -4 }}
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                  <img src="/bis.webp" alt="BIS Hallmarked" className='w-10 h-10 object-contain' />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-400/10 to-amber-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </motion.div>
+                <div className="flex flex-col">
+                  <span className="text-base font-bold text-gray-900">BIS Hallmarked</span>
+                  <span className="text-sm text-gray-600 font-medium">Certified Quality Assurance</span>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 to-amber-600/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+            </motion.div>
 
-              <motion.div
-                className="group relative bg-gradient-to-r from-blue-50 to-blue-100/80 text-gray-800 px-6 py-3 rounded-2xl border border-blue-200/50 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -2 }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                    <img src="/igi.jpg" alt="IGI Certified" className='w-8 h-8 object-contain' />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-semibold text-gray-900">IGI Certified</span>
-                    <span className="text-xs text-gray-600">Diamond Authenticity</span>
-                  </div>
+            <motion.div
+              className="group relative bg-gradient-to-br from-blue-50 to-blue-100/90 text-gray-800 px-8 py-4 rounded-3xl border border-blue-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -4 }}
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                  <img src="/igi.jpg" alt="IGI Certified" className='w-10 h-10 object-contain' />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-blue-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </motion.div>
+                <div className="flex flex-col">
+                  <span className="text-base font-bold text-gray-900">IGI Certified</span>
+                  <span className="text-sm text-gray-600 font-medium">Diamond Authenticity Guaranteed</span>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+            </motion.div>
 
-              <motion.div
-                className="group relative bg-gradient-to-r from-rose-50 to-rose-100/80 text-gray-800 px-6 py-3 rounded-2xl border border-rose-200/50 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -2 }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                    <Heart size={20} className="text-rose-500" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-semibold text-gray-900">Trusted Since 1965</span>
-                    <span className="text-xs text-gray-600">58 Years of Excellence</span>
-                  </div>
+            <motion.div
+              className="group relative bg-gradient-to-br from-rose-50 to-rose-100/90 text-gray-800 px-8 py-4 rounded-3xl border border-rose-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -4 }}
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                  <Heart size={24} className="text-rose-500" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-rose-400/10 to-rose-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </motion.div>
+                <div className="flex flex-col">
+                  <span className="text-base font-bold text-gray-900">Trusted Since 1965</span>
+                  <span className="text-sm text-gray-600 font-medium">58 Years of Excellence</span>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-rose-400/20 to-rose-600/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-rose-400 to-rose-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+            </motion.div>
 
-              <motion.div
-                className="group relative bg-gradient-to-r from-emerald-50 to-emerald-100/80 text-gray-800 px-6 py-3 rounded-2xl border border-emerald-200/50 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -2 }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                    <Shield size={20} className="text-emerald-500" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-semibold text-gray-900">H/M Hallmarked</span>
-                    <span className="text-xs text-gray-600">Purity Guaranteed</span>
-                  </div>
+            <motion.div
+              className="group relative bg-gradient-to-br from-emerald-50 to-emerald-100/90 text-gray-800 px-8 py-4 rounded-3xl border border-emerald-200/60 shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, y: -4 }}
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                  <Shield size={24} className="text-emerald-500" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-emerald-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </motion.div>
-            </div>
+                <div className="flex flex-col">
+                  <span className="text-base font-bold text-gray-900">H/M Hallmarked</span>
+                  <span className="text-sm text-gray-600 font-medium">Purity Guaranteed</span>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-emerald-600/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+            </motion.div>
+          </div>
           </div>
 
-          {/* Featured Collections Showcase */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* Luxury Collection Showcase */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {/* Gold Jewellery Card */}
             <motion.div
-              className="relative group cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
+              className="group relative cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -8 }}
               onClick={() => setSelectedCategory('gold')}
             >
-              <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
-                <div className="relative h-40 bg-gradient-to-br from-amber-100 to-amber-50 flex items-center justify-center overflow-hidden">
+              <div className="bg-white rounded-3xl overflow-hidden border border-gray-200 transition-all duration-500 hover:border-amber-300 shadow-xl hover:shadow-2xl">
+                <div className="relative h-48 bg-gradient-to-br from-amber-100 to-amber-50 flex items-center justify-center overflow-hidden">
                   <img
                     src="/collection-images/gold-jew.png"
                     alt="Gold Jewellery"
-                    className="w-full h-full object-cover opacity-80"
+                    className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/20 via-transparent to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/30 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                    Premium
+                  </div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">Gold Jewellery</h3>
-                  <p className="text-gray-500 text-sm mb-4 font-light">22K & 24K Pure Gold</p>
-                  <div className="flex items-center justify-center gap-2 text-gray-700">
-                    <span className="text-sm font-light">Explore Collection</span>
-                    <ChevronRight size={14} />
+                <div className="p-8 text-center">
+                  <h3 className="text-2xl font-light text-gray-900 mb-3 tracking-wide">Gold Jewellery</h3>
+                  <p className="text-gray-600 text-sm mb-6 font-light">22K & 24K Pure Gold Collections</p>
+                  <div className="flex items-center justify-center gap-2 text-amber-600 group-hover:text-amber-700 transition-colors duration-300">
+                    <span className="text-sm font-medium">Explore Collection</span>
+                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
             </motion.div>
 
             {/* Diamonds Jewellery Card */}
             <motion.div
-              className="relative group cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
+              className="group relative cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -8 }}
               onClick={() => setSelectedCategory('diamond')}
             >
-              <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
-                <div className="relative h-40 bg-gradient-to-br from-blue-50 to-gray-50 flex items-center justify-center overflow-hidden">
+              <div className="bg-white rounded-3xl overflow-hidden border border-gray-200 transition-all duration-500 hover:border-blue-300 shadow-xl hover:shadow-2xl">
+                <div className="relative h-48 bg-gradient-to-br from-blue-50 to-gray-50 flex items-center justify-center overflow-hidden">
                   <img
                     src="/collection-images/diamond-jew.png"
                     alt="Diamonds Jewellery"
-                    className="w-full h-full object-cover opacity-80"
+                    className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-transparent to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                    Certified
+                  </div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">Diamonds Jewellery</h3>
-                  <p className="text-gray-500 text-sm mb-4 font-light">IGI Certified Diamonds</p>
-                  <div className="flex items-center justify-center gap-2 text-gray-700">
-                    <span className="text-sm font-light">Explore Collection</span>
-                    <ChevronRight size={14} />
+                <div className="p-8 text-center">
+                  <h3 className="text-2xl font-light text-gray-900 mb-3 tracking-wide">Diamonds Jewellery</h3>
+                  <p className="text-gray-600 text-sm mb-6 font-light">IGI Certified Diamonds</p>
+                  <div className="flex items-center justify-center gap-2 text-blue-600 group-hover:text-blue-700 transition-colors duration-300">
+                    <span className="text-sm font-medium">Explore Collection</span>
+                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
             </motion.div>
 
             {/* Silver Jewellery Card */}
             <motion.div
-              className="relative group cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
+              className="group relative cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -8 }}
               onClick={() => setSelectedCategory('silver')}
             >
-              <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
-                <div className="relative h-40 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden">
+              <div className="bg-white rounded-3xl overflow-hidden border border-gray-200 transition-all duration-500 hover:border-gray-400 shadow-xl hover:shadow-2xl">
+                <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center overflow-hidden">
                   <img
                     src="/collection-images/silver-jew.png"
                     alt="Silver Jewellery"
-                    className="w-full h-full object-cover opacity-80"
+                    className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-700/20 via-transparent to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-700/30 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute top-4 right-4 bg-gray-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                    Sterling
+                  </div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">Silver Jewellery</h3>
-                  <p className="text-gray-500 text-sm mb-4 font-light">92.5 Sterling Silver</p>
-                  <div className="flex items-center justify-center gap-2 text-gray-700">
-                    <span className="text-sm font-light">Explore Collection</span>
-                    <ChevronRight size={14} />
+                <div className="p-8 text-center">
+                  <h3 className="text-2xl font-light text-gray-900 mb-3 tracking-wide">Silver Jewellery</h3>
+                  <p className="text-gray-600 text-sm mb-6 font-light">92.5 Sterling Silver</p>
+                  <div className="flex items-center justify-center gap-2 text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                    <span className="text-sm font-medium">Explore Collection</span>
+                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-gray-400 to-gray-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
             </motion.div>
 
             {/* Jadau Kundans Card */}
             <motion.div
-              className="relative group cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
+              className="group relative cursor-pointer"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: -8 }}
               onClick={() => setSelectedCategory('jadau')}
             >
-              <div className="bg-white rounded-2xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300">
-                <div className="relative h-40 bg-gradient-to-br from-rose-50 to-pink-50 flex items-center justify-center overflow-hidden">
+              <div className="bg-white rounded-3xl overflow-hidden border border-gray-200 transition-all duration-500 hover:border-rose-300 shadow-xl hover:shadow-2xl">
+                <div className="relative h-48 bg-gradient-to-br from-rose-50 to-pink-50 flex items-center justify-center overflow-hidden">
                   <img
                     src="/collection-images/jadau-jew.png"
                     alt="Jadau Kundans"
-                    className="w-full h-full object-cover opacity-80"
+                    className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-rose-900/20 via-transparent to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-rose-900/30 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute top-4 right-4 bg-rose-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                    Traditional
+                  </div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-light text-gray-900 mb-2 tracking-wide">Jadau Kundans</h3>
-                  <p className="text-gray-500 text-sm mb-4 font-light">Traditional Artistry</p>
-                  <div className="flex items-center justify-center gap-2 text-gray-700">
-                    <span className="text-sm font-light">Explore Collection</span>
-                    <ChevronRight size={14} />
+                <div className="p-8 text-center">
+                  <h3 className="text-2xl font-light text-gray-900 mb-3 tracking-wide">Jadau Kundans</h3>
+                  <p className="text-gray-600 text-sm mb-6 font-light">Traditional Artistry</p>
+                  <div className="flex items-center justify-center gap-2 text-rose-600 group-hover:text-rose-700 transition-colors duration-300">
+                    <span className="text-sm font-medium">Explore Collection</span>
+                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
                 </div>
               </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-rose-400 to-rose-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
             </motion.div>
           </div>
 
-          {/* Premium Collection Banner */}
+          {/* Luxury Premium Collection Banner */}
           <motion.div
-            className="bg-gray-100 rounded-2xl p-8 mb-16 border border-gray-200"
-            initial={{ opacity: 0, y: 30 }}
+            className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 rounded-3xl p-10 mb-20 border border-amber-200/60 shadow-xl"
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
               <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
-                  <Crown size={24} className="text-gray-600" />
-                  <h3 className="text-2xl font-light text-gray-900 tracking-wide">Premium Collection</h3>
+                <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Crown size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-3xl font-light text-gray-900 tracking-wide">Premium Collection</h3>
                 </div>
-                <p className="text-base text-gray-600 mb-6 font-light">Exclusive 22K Gold & Certified Diamond Masterpieces</p>
-                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                  <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-200">
-                    <Shield size={14} />
-                    <span className="text-sm font-light">BIS Certified</span>
+                <p className="text-lg text-gray-600 mb-8 font-light leading-relaxed">Exclusive 22K Gold & Certified Diamond Masterpieces crafted with precision and passion</p>
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                  <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-2xl border border-amber-200/60 shadow-md hover:shadow-lg transition-all duration-300">
+                    <Shield size={16} className="text-amber-600" />
+                    <span className="text-sm font-medium text-gray-800">BIS Certified</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-200">
-                    <Award size={14} />
-                    <span className="text-sm font-light">IGI Certified</span>
+                  <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-2xl border border-amber-200/60 shadow-md hover:shadow-lg transition-all duration-300">
+                    <Award size={16} className="text-amber-600" />
+                    <span className="text-sm font-medium text-gray-800">IGI Certified</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-200">
-                    <Heart size={14} />
-                    <span className="text-sm font-light">Lifetime Warranty</span>
+                  <div className="flex items-center gap-3 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-2xl border border-amber-200/60 shadow-md hover:shadow-lg transition-all duration-300">
+                    <Heart size={16} className="text-amber-600" />
+                    <span className="text-sm font-medium text-gray-800">Lifetime Warranty</span>
                   </div>
                 </div>
               </div>
               <motion.button
-                className="bg-gray-900 text-white px-6 py-3 rounded-full font-light text-sm transition-all duration-300 hover:bg-gray-800 hover:scale-105 flex items-center gap-2"
+                className="group relative bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white px-8 py-4 rounded-2xl font-medium text-base transition-all duration-500 hover:from-amber-700 hover:via-amber-800 hover:to-amber-900 hover:scale-105 hover:shadow-2xl flex items-center gap-3"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Gem size={16} />
+                <Gem size={20} className="group-hover:rotate-12 transition-transform duration-300" />
                 View Premium Collection
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-400 to-amber-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300"></div>
               </motion.button>
             </div>
           </motion.div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {/* Enhanced Category Filter */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'all'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              className={`px-8 py-3 rounded-2xl text-sm font-medium transition-all duration-500 ${selectedCategory === 'all'
+                  ? 'bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 hover:bg-gray-50 hover:shadow-md'
                 }`}
             >
-              All Collections
+              <span className="flex items-center gap-2">
+                <Sparkles size={16} />
+                All Collections
+              </span>
             </button>
             <button
               onClick={() => setSelectedCategory('gold')}
-              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'gold'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              className={`px-8 py-3 rounded-2xl text-sm font-medium transition-all duration-500 ${selectedCategory === 'gold'
+                  ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-amber-300 hover:bg-amber-50 hover:shadow-md'
                 }`}
             >
-              💛 Gold Jewellery
+              <span className="flex items-center gap-2">
+                <span className="text-lg">💛</span>
+                Gold Jewellery
+              </span>
             </button>
             <button
               onClick={() => setSelectedCategory('diamond')}
-              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'diamond'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              className={`px-8 py-3 rounded-2xl text-sm font-medium transition-all duration-500 ${selectedCategory === 'diamond'
+                  ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md'
                 }`}
             >
-              💎 Diamonds Jewellery
+              <span className="flex items-center gap-2">
+                <span className="text-lg">💎</span>
+                Diamonds Jewellery
+              </span>
             </button>
             <button
               onClick={() => setSelectedCategory('silver')}
-              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'silver'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              className={`px-8 py-3 rounded-2xl text-sm font-medium transition-all duration-500 ${selectedCategory === 'silver'
+                  ? 'bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:bg-gray-50 hover:shadow-md'
                 }`}
             >
-              🥈 Silver Jewellery
+              <span className="flex items-center gap-2">
+                <span className="text-lg">🥈</span>
+                Silver Jewellery
+              </span>
             </button>
             <button
               onClick={() => setSelectedCategory('jadau')}
-              className={`px-6 py-2.5 rounded-full text-sm font-light transition-all duration-300 ${selectedCategory === 'jadau'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+              className={`px-8 py-3 rounded-2xl text-sm font-medium transition-all duration-500 ${selectedCategory === 'jadau'
+                  ? 'bg-gradient-to-r from-rose-500 to-rose-600 text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-rose-300 hover:bg-rose-50 hover:shadow-md'
                 }`}
             >
-              👑 Jadau Kundans
+              <span className="flex items-center gap-2">
+                <span className="text-lg">👑</span>
+                Jadau Kundans
+              </span>
             </button>
           </div>
 
-          {/* Products Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Luxury Products Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
-                className="bg-white rounded-xl overflow-hidden border border-gray-200 transition-all duration-300 hover:border-gray-300 group"
-                initial={{ opacity: 0, y: 30 }}
+                className="group relative bg-white rounded-3xl overflow-hidden border border-gray-200 transition-all duration-500 hover:border-amber-300 hover:shadow-2xl"
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -2 }}
+                whileHover={{ y: -8 }}
               >
-                <div className="relative mb-3">
+                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-64 object-cover"
-                    onError={(e) => {
-                      e.target.src = `https://via.placeholder.com/300x200/f3f4f6/6b7280?text=${encodeURIComponent(product.name)}`;
-                    }}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   {product.featured && (
-                    <div className="absolute top-2 right-2 bg-gray-900 text-white px-2 py-1 rounded-full text-xs font-light">
+                    <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg z-10">
                       Featured
                     </div>
                   )}
-
-                  {/* Certification Badges on Product */}
-                  <div className="absolute top-2 left-2 flex flex-col gap-1">
-                    {product.category === 'gold' && (
-                      <div className="bg-white text-gray-700 px-2 py-1 rounded-full text-xs font-light flex items-center gap-1 border border-gray-200">
-                        <Shield size={8} />
-                        BIS
-                      </div>
-                    )}
-                    {product.category === 'diamond' && (
-                      <div className="bg-white text-gray-700 px-2 py-1 rounded-full text-xs font-light flex items-center gap-1 border border-gray-200">
-                        <Award size={8} />
-                        IGI
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-light text-gray-900 mb-2 tracking-wide">{product.name}</h3>
-                  <p className="text-gray-500 text-sm mb-3 line-clamp-2 font-light">{product.description}</p>
-
-                  {/* Category and Trust Indicators */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-light text-gray-700 bg-gray-100 px-2 py-1 rounded-full">
-                      {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
-                    </span>
-                    {product.category === 'gold' && (
-                      <span className="text-xs text-gray-600 font-light">22K Gold</span>
-                    )}
-                    {product.category === 'diamond' && (
-                      <span className="text-xs text-gray-600 font-light">Certified</span>
-                    )}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-amber-700 transition-colors duration-300">{product.name}</h3>
+                  <p className="text-gray-600 text-sm mb-4 font-light leading-relaxed">{product.description}</p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1">
+                        {[...Array(4)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                        ))}
+                        <Star className="w-4 h-4 text-yellow-400" />
+                      </div>
+                      <span className="text-xs text-gray-500 font-medium">4.8</span>
+                    </div>
+                    <motion.button
+                      className="text-amber-600 hover:text-amber-700 transition-colors duration-300"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <Heart size={18} className="group-hover:fill-current" />
+                    </motion.button>
                   </div>
-
-                  <div className="text-xl font-light text-gray-900 mb-3">{product.price}</div>
-
-                  {/* Additional Trust Info */}
-                  <div className="flex items-center gap-2 mb-4 text-xs text-gray-400">
-                    <Heart size={10} className="text-gray-400" />
-                    <span>Trusted Quality</span>
-                    {product.category === 'gold' && (
-                      <>
-                        <span>•</span>
-                        <span>Hallmarked</span>
-                      </>
-                    )}
-                    {product.category === 'diamond' && (
-                      <>
-                        <span>•</span>
-                        <span>Lab Certified</span>
-                      </>
-                    )}
-                  </div>
-
-                  <motion.button
-                    className="w-full bg-gray-900 text-white px-4 py-2.5 rounded-full font-light text-sm transition-all duration-300 hover:bg-gray-800 hover:scale-105 flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <MessageCircle size={14} />
-                    Enquire Now
-                  </motion.button>
                 </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
               </motion.div>
             ))}
           </div>
