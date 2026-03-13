@@ -33,7 +33,7 @@ function AppContent() {
 
          setProducts([
           { id: 1, name: 'Gold Necklace', category: 'gold',  description: '22K Gold Necklace', featured: true, image: 'https://i.pinimg.com/originals/03/e2/5b/03e25bd0498ea5e88293cb24aa4769a0.jpg' },
-          { id: 2, name: 'Diamond Ring', category: 'diamond', description: 'IGI Certified Diamond', featured: true, image: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRjsJf_xdDi9_DRax91msBMOOt1U1lXKOeTEyJ3tDGWx8jAWr7W96OB0yGtIgNtDg7oXyotHtOMES0oFBh2bdzZwUSNtSds' },
+          { id: 2, name: 'Diamond Ring', category: 'diamond', description: 'IGI Certified Diamond', featured: true, image: './diamond-jewellery/LR/DLR.jpg' },
           { id: 3, name: 'Silver Earrings', category: 'silver',description: '92.5 Sterling Silver', featured: false, image: 'https://m.media-amazon.com/images/I/515fm8t5wfL._SY695_.jpg' },
           { id: 4, name: 'Jadau Set', category: 'jadau',  description: 'Traditional Jadau Kundan', featured: true, image: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS00Xb_0E082Bmai__yilthekKH9sNcaVmfD_XznjJy71x_I1m4F1WOl2TOfb-8PjR-_qiKAjBEG6gRUXX-UgdoxJOfL_5X' },
           { id: 5, name: 'Gold Bangles', category: 'gold',  description: '22K Gold Bangles', featured: false, image: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSqpScCze7HgHc9AM9Iu7ogyy6VM2yWgxuYF5Moj9PCJClED5dTklecxxcOXXQb8K5DYMVgZBNArkgSSSgOt4Lh3HcpnS1UQQ' },
@@ -103,16 +103,7 @@ function AppContent() {
                 <div className="absolute inset-0 bg-amber-50/50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
               </motion.a>
-              <motion.a
-                href="#map"
-                className="text-gray-700 hover:text-amber-600 font-medium transition-all duration-300 hover:scale-105 relative group py-2"
-                whileHover={{ y: -2 }}
-              >
-                <span className="relative z-10">Visit Us</span>
-                <div className="absolute inset-0 bg-amber-50/50 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-500 to-amber-600 group-hover:w-full transition-all duration-300"></span>
-              </motion.a>
-              <motion.div className="flex items-center gap-4 pl-8 border-l border-amber-200">
+                            <motion.div className="flex items-center gap-4 pl-8 border-l border-amber-200">
                 <motion.a
                   href="tel:+918305300009"
                   className="flex items-center gap-3 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-6 py-3 rounded-full font-medium shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:from-amber-600 hover:via-amber-700 hover:to-amber-800"
@@ -162,14 +153,7 @@ function AppContent() {
                 >
                   About
                 </a>
-                <a
-                  href="#map"
-                  className="block px-4 py-3 text-gray-700 hover:text-amber-600 hover:bg-amber-50 rounded-lg font-medium transition-all duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Visit Us
-                </a>
-              </motion.div>
+                              </motion.div>
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 <a
                   href="tel:+918305300009"
@@ -237,34 +221,7 @@ function AppContent() {
 
         {/* Premium Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            animate={{ y: [-30, 30, -30], rotate: [-8, 8, -8], scale: [1, 1.1, 1] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-10 text-amber-400/20"
-          >
-            <Gem size={80} />
-          </motion.div>
-          <motion.div
-            animate={{ y: [30, -30, 30], rotate: [8, -8, 8], scale: [1, 1.15, 1] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-20 right-10 text-blue-400/20"
-          >
-            <Diamond size={100} />
-          </motion.div>
-          <motion.div
-            animate={{ y: [-25, 25, -25], scale: [1, 1.08, 1], rotate: [0, 180, 360] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/3 left-1/4 text-yellow-400/20"
-          >
-            <Crown size={90} />
-          </motion.div>
-          <motion.div
-            animate={{ y: [20, -20, 20], x: [-10, 10, -10] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-2/3 right-1/3 text-rose-400/20"
-          >
-            <Sparkles size={60} />
-          </motion.div>
+        {/* Reved Sparkles */}
         </div>
 
         <div className=" py-5 max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
@@ -323,7 +280,7 @@ function AppContent() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <a href='#map' className="flex items-center gap-3 z-10">
+                <a href='#contact' className="flex items-center gap-3 z-10">
                   <Crown size={20} />
                   Visit Our Store
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -825,7 +782,7 @@ function AppContent() {
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
                 <span className="text-2xl font-bold text-gray-900 mr-2">5.0</span>
-                <span className="text-gray-600 mr-2">(282 reviews)</span>
+                <span className="text-gray-600 mr-2">5.0 (320+ reviews)</span>
                 <span className="text-sm text-gray-500">• Jewelry Store in Batala, Punjab</span>
               </div>
             </div>
@@ -895,84 +852,247 @@ function AppContent() {
       </section>
 
 
-      {/* Contact Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-amber-50">
+      {/* Premium Showroom Section */}
+      <section id="contact" className="py-18 lg:py-32 bg-gradient-to-br from-gray-50 to-amber-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+          {/* Section Header */}
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-6 py-3 rounded-full mb-6">
+              <Crown size={20} />
+              <span className="text-sm font-semibold">Premium Showroom Experience</span>
+            </div>
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 font-display tracking-wide">Visit Our Showroom</h2>
-            <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto">Experience our exquisite collection in person at our premium Batala location</p>
-          </div>
+            <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+              Experience our exquisite collection in person at our premium Batala location. 
+              Discover timeless elegance and exceptional craftsmanship in our welcoming showroom.
+            </p>
+          </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
-            {/* Contact Information */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 flex flex-col h-full">
+            {/* Enhanced Contact Information Card */}
+            <motion.div
+              className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 flex flex-col h-full border border-amber-100/50"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-2xl mb-6">
+                  <MapPin size={20} />
+                  <span className="font-semibold">Premium Location</span>
+                </div>
+                <h3 className="text-2xl font-light text-gray-900 mb-2">Address</h3>
+                <p className="text-gray-700 text-lg leading-relaxed font-light">
+                  City Rd, Bhandari Gate<br />
+                  Batala, Punjab 143505
+                </p>
+              </div>
+
               <div className="space-y-8 flex-grow">
-                <div className="flex items-start gap-5 group">
-                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-amber-200 transition-colors duration-300">
-                    <MapPin size={20} className="text-amber-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-gray-900 mb-2 text-sm font-semibold tracking-wide uppercase">Address</h3>
-                    <p className="text-gray-700 text-base leading-relaxed">City Rd, Bhandari Gate<br />Batala, Punjab 143505</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-5 group">
-                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-amber-200 transition-colors duration-300">
-                    <Phone size={20} className="text-amber-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-gray-900 mb-2 text-sm font-semibold tracking-wide uppercase">Phone</h3>
-                    <p className="text-base"><a href="tel:+918305300009" className="text-amber-600 hover:text-amber-700 transition-colors duration-300 font-medium">+91 83053 00009</a></p>
+                <div className="group">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-amber-200 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Phone size={24} className="text-amber-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
+                      <a href="tel:+918305300009" className="text-amber-600 hover:text-amber-700 transition-colors duration-300 font-medium text-lg">
+                        +91 83053 00009
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5 group">
-                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-amber-200 transition-colors duration-300">
-                    <Clock size={20} className="text-amber-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-gray-900 mb-2 text-sm font-semibold tracking-wide uppercase">Business Hours</h3>
-                    <p className="text-gray-700 text-base">Mon to Saturday :  Closes 8:00 PM</p>
+                <div className="group">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Clock size={24} className="text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900">Business Hours</h3>
+                      <p className="text-gray-700 text-base font-light">Mon to Saturday: Closes 8:00 PM</p>
+                      <p className="text-gray-500 text-sm mt-1">Sunday: Closed</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-10 pt-8 border-t border-gray-100">
-                <p className="text-sm text-gray-600 mb-6 font-medium">Connect With Us</p>
-                <div className="flex flex-wrap gap-3">
-                  <a href="https://www.facebook.com/chauhanjewellers" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full text-sm font-medium transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg">
-                    <Facebook size={16} />
+              {/* Premium Connect Section */}
+              <div className="mt-12 pt-8 border-t border-gray-100">
+                <h3 className="text-lg font-semibold text-gray-900 mb-6">Connect With Us</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <motion.a
+                    href="https://www.facebook.com/chauhanjewellers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 bg-gray-900 text-white px-6 py-4 rounded-2xl text-sm font-medium transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Facebook size={18} />
                     <span>Facebook</span>
-                  </a>
-                  <a href="https://www.instagram.com/chauhan_jewellers_batala" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full text-sm font-medium transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg">
-                    <Instagram size={16} />
+                  </motion.a>
+                  <motion.a
+                    href="https://www.instagram.com/chauhan_jewellers_batala"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 bg-gray-900 text-white px-6 py-4 rounded-2xl text-sm font-medium transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Instagram size={18} />
                     <span>Instagram</span>
-                  </a>
-                  <a href="tel:+918305300009" className="flex items-center gap-2 px-6 py-3 bg-amber-600 text-white rounded-full text-sm font-medium transition-all duration-300 hover:bg-amber-700 hover:scale-105 hover:shadow-lg">
-                    <Phone size={16} />
+                  </motion.a>
+                  <motion.a
+                    href="tel:+918305300009"
+                    className="flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-4 rounded-2xl text-sm font-medium transition-all duration-300 hover:from-amber-600 hover:to-amber-700 hover:scale-105 hover:shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Phone size={18} />
                     <span>Call Now</span>
-                  </a>
+                  </motion.a>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Map */}
-            <div id='map' className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col h-full">
-              <div className="p-6 lg:p-8 flex-grow flex flex-col">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">Find Us on Map</h3>
-                <div className="rounded-xl overflow-hidden border border-gray-200 flex-grow">
-                  <iframe
-                    className="w-full h-full"
-                    style={{ border: 0, minHeight: '400px' }}
-                    loading="lazy"
-                    allowFullScreen
-                    src="https://maps.google.com/maps?q=Chauhan%20Jewellers%20Batala&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  />
+            {/* Enhanced Showroom Experience Card */}
+            <motion.div
+              className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 rounded-3xl shadow-2xl p-8 lg:p-10 border border-amber-200/60"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-rose-500 to-rose-600 text-white px-6 py-3 rounded-2xl mb-6">
+                  <Sparkles size={20} />
+                  <span className="font-semibold">Luxury Experience</span>
+                </div>
+                <h3 className="text-2xl font-light text-gray-900 mb-4">Why Visit Our Showroom?</h3>
+                <p className="text-gray-700 text-base leading-relaxed font-light">
+                  Step into a world of elegance and discover our handcrafted masterpieces in person. 
+                  Our premium showroom offers an intimate setting to explore our exclusive collections.
+                </p>
+              </div>
+
+              {/* Premium Features */}
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md flex-shrink-0">
+                    <Gem size={20} className="text-amber-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Exclusive Collections</h4>
+                    <p className="text-gray-600 text-sm font-light">View our complete range of 22K Gold, Certified Diamonds, and Traditional Jadau pieces</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md flex-shrink-0">
+                    <Users size={20} className="text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Expert Consultation</h4>
+                    <p className="text-gray-600 text-sm font-light">Personalized guidance from our experienced jewelry specialists</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md flex-shrink-0">
+                    <Shield size={20} className="text-emerald-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Certified Authenticity</h4>
+                    <p className="text-gray-600 text-sm font-light">All pieces come with BIS and IGI certification guarantees</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-md flex-shrink-0">
+                    <Heart size={20} className="text-rose-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Family Tradition</h4>
+                    <p className="text-gray-600 text-sm font-light">58 years of trusted service and craftsmanship excellence</p>
+                  </div>
                 </div>
               </div>
-            </div>
+
+              {/* Premium CTA */}
+              <motion.div
+                className="bg-white rounded-2xl p-6 shadow-lg border border-amber-200/40"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <Crown size={24} className="text-amber-600" />
+                    <h4 className="text-xl font-semibold text-gray-900">Ready to Visit?</h4>
+                  </div>
+                  <p className="text-gray-600 mb-6 font-light">Book your private consultation or walk in during business hours</p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <motion.a
+                      href="tel:+918305300009"
+                      className="flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:from-amber-600 hover:to-amber-700 hover:scale-105 hover:shadow-lg"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Phone size={20} />
+                      <span>Call Now</span>
+                    </motion.a>
+                    <motion.a
+                      href="https://wa.me/918305300009?text=Hi%20Chauhan%20Jewellers!%20I'd%20like%20to%20schedule%20a%20visit%20to%20your%20showroom."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:shadow-lg"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <MessageCircle size={20} />
+                      <span>WhatsApp</span>
+                    </motion.a>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
+
+          {/* Additional Trust Indicators */}
+          <motion.div
+            className="mt-20 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-gray-600 mb-6 font-light">Trusted by generations of families in Batala and beyond</p>
+            <div className="flex flex-wrap justify-center gap-8">
+              <div className="flex items-center gap-2 text-amber-600">
+                <Award size={20} />
+                <span className="font-medium">BIS Certified</span>
+              </div>
+              <div className="flex items-center gap-2 text-blue-600">
+                <Gem size={20} />
+                <span className="font-medium">IGI Certified</span>
+              </div>
+              <div className="flex items-center gap-2 text-rose-600">
+                <Heart size={20} />
+                <span className="font-medium">Since 1965</span>
+              </div>
+              <div className="flex items-center gap-2 text-emerald-600">
+                <Shield size={20} />
+                <span className="font-medium">Lifetime Warranty</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -44,8 +44,10 @@ export default {
         }
       },
       fontFamily: {
-        'display': ['Playfair Display', 'serif'],
-        'body': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['Avenir', 'Playfair Display', 'serif'],
+        'body': ['PT Sans', 'Inter', 'system-ui', 'sans-serif'],
+        'avenir': ['Avenir', 'sans-serif'],
+        'pt-sans': ['PT Sans', 'sans-serif'],
       },
       animation: {
         'float-gold': 'float-gold 8s ease-in-out infinite',
