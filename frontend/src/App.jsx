@@ -410,11 +410,11 @@ function AppContent() {
         href="https://wa.me/918305300009?text=Hi%20Chauhan%20Jewellers!%20I'm%20interested%20in%20your%20jewelry%20collection."
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 bg-gray-900 text-white p-3 rounded-full border border-gray-200 z-40"
+        className="fixed bottom-8 right-8 bg-gray-900 text-white p-2 rounded-full border border-gray-200 z-40"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <MessageCircle size={20} />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" height="30" />
         <span className="absolute right-24 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 shadow-lg">Chat with us on WhatsApp</span>
       </motion.a>
     </div>

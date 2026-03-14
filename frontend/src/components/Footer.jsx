@@ -125,21 +125,21 @@ const Footer = () => {
                   href="https://www.facebook.com/chauhanjewellers"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300"
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Facebook size={18} />
+                  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/1280px-Facebook_f_logo_%282021%29.svg.png?_=20210818083032" alt="Facebook" width="20" height="20" />
                 </motion.a>
                 <motion.a
                   href="https://www.instagram.com/chauhan_jewellers_batala"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300"
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Instagram size={18} />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1280px-Instagram_logo_2022.svg.png?_=20220518162235" alt="Instagram" width="20" height="20" />
                 </motion.a>
                 <motion.a
                   href="https://wa.me/918305300009?text=Hi%20Chauhan%20Jewellers!"
@@ -149,7 +149,7 @@ const Footer = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <MessageCircle size={18} />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="20" height="20" />
                 </motion.a>
               </div>
             </div>

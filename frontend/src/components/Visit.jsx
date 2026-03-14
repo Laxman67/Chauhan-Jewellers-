@@ -112,7 +112,8 @@ const Visit = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <MessageCircle size={20} />
+                      {/* <MessageCircle size={20} /> */}
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" height="30" />
                       <span>WhatsApp</span>
                     </motion.a>
                   </div>
