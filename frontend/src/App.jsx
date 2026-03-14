@@ -79,9 +79,10 @@ function AppContent() {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 rounded-2xl flex items-center justify-center shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <div className=" group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
                   <div className="relative">
-                    <Crown className="w-9 h-9 text-white" />
+                    {/* <Crown className="w-9 h-9 text-white" /> */}
+                    <img src="chauhan-jewellers-logo.png" alt="logo" height="80" width="80" srcset="" />
                     <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-yellow-300 to-yellow-400 rounded-full animate-pulse shadow-lg"></div>
                   </div>
                 </div>

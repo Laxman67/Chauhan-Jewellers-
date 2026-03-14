@@ -17,16 +17,17 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg">
-                <Crown className="w-7 h-7 text-white" />
+              <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-lg">
+                <img src="chauhan-jewellers-logo.png" alt="logo" height="80" width="80" srcset="" />
+
               </div>
               <div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Chauhan Jewellers</h3>
+                <h3 className="text-2xl font-bold bg-linear-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">Chauhan Jewellers</h3>
                 <p className="text-gray-400 text-sm">Since 1965</p>
               </div>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              A legacy of excellence in jewelry craftsmanship for over 58 years. 
+              A legacy of excellence in jewelry craftsmanship for over 58 years.
               Trusted by generations for authentic gold, diamonds, and traditional jewelry.
             </p>
             <div className="flex items-center gap-2">
